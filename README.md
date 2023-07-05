@@ -1,22 +1,60 @@
-# online-store
-Project:
+# Online store
+
+---
+
+### Project:
+
 This project is an online store designed for selling products through the internet. It provides a user-friendly interface for searching and purchasing items.
 
-Functionality
+### Functionality
+
 The online store includes the following functionality:
 
--sorting by price;
--search by name;
--pagination;
--shopping cart and order creation.
+- sorting by price;
+- search by name;
+- pagination;
+- shopping cart and order creation.
 
-Technologies
-The online store project utilizes the following technologies and tools:
+### Technologies
 
-Frontend: HTML, CSS, JavaScript, a library (React) for creating the user interface.
+The online store project utilizes the following technologies:
 
-Contributing
-Contributions to the online store project are welcome. If you would like to contribute, please follow the guidelines outlined in the CONTRIBUTING.md file.
+- HTML
+- CSS
+- JavaScript
+- React
+- Redux
+- React Router
+- React Hook Form
+- Material UI
+- Tailwind CSS
 
-License
-The online store project is licensed under the MIT License.
+#Getting Started
+
+---
+
+To get started with the React app, follow the instructions below:
+
+###Installation
+
+1. Clone the repository: git clone https://github.com/k-oleksii/online-store.git
+2. Navigate to the project directory: `cd online-store`
+3. Install dependencies: `npm install`
+
+###Development Server
+Run the following command to start the development server:
+
+```
+npm run dev
+```
+
+Open http://localhost:3000 in your browser to view the app. The page will reload if you make any edits, and you will see any lint errors in the console.
+
+###Build
+To build the app for production, use the following command:
+
+```
+npm run build
+```
+
+This command creates a build folder with a production-ready bundle.
