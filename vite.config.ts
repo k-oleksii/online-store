@@ -5,7 +5,7 @@ import macrosPlugin from 'vite-plugin-babel-macros';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), macrosPlugin()],
-  base: '/online-store/',
+  // base: '/online-store/',
   server: {
     port: 3000,
   },
