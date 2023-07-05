@@ -1,26 +1,26 @@
 export const navigation = [
   {
-    path: '/bicycles',
+    path: '/online-store/bicycles',
     name: 'Bicycles',
   },
   {
-    path: '/skateboards',
+    path: '/online-store/skateboards',
     name: 'Skateboards',
   },
   {
-    path: '/scooters',
+    path: '/online-store/scooters',
     name: 'Scooters',
   },
   {
-    path: '/gyroboards',
+    path: '/online-store/gyroboards',
     name: 'Gyroboards',
   },
   {
-    path: '/monowheels',
+    path: '/online-store/monowheels',
     name: 'Monowheels',
   },
   {
-    path: '/accessories',
+    path: '/online-store/accessories',
     name: 'Accessories',
   },
 ];

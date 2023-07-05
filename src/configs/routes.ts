@@ -8,37 +8,37 @@ import { Skateboards } from '../pages/Skateboards';
 
 export const routes = [
   {
-    path: '/',
+    path: '/online-store/',
     element: Home,
     exact: true,
   },
   {
-    path: '/bicycles',
+    path: '/online-store/bicycles',
     element: Bicycles,
     exact: true,
   },
   {
-    path: '/skateboards',
+    path: '/online-store/skateboards',
     element: Skateboards,
     exact: true,
   },
   {
-    path: '/scooters',
+    path: '/online-store/scooters',
     element: Scooters,
     exact: true,
   },
   {
-    path: '/gyroboards',
+    path: '/online-store/gyroboards',
     element: Gyroboards,
     exact: true,
   },
   {
-    path: '/monowheels',
+    path: '/online-store/monowheels',
     element: Monowheels,
     exact: true,
   },
   {
-    path: '/accessories',
+    path: '/online-store/accessories',
     element: Accessories,
     exact: true,
   },

@@ -6,12 +6,12 @@ import { routes } from './configs/routes';
 export const App = () => {
   return (
     <div className='flex flex-col items-center gap-5 py-10 text-center'>
-      <Link to='/'>
+      <Link to='/online-store/'>
         <img src={logo} className='logo react' alt='React logo' />
       </Link>
       <h1>Welcome to the online store CityWheel!</h1>
       <Routes>
-        <Route path='/' element={<Layout />}>
+        <Route path='/online-store/' element={<Layout />}>
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={<route.element />} />
           ))}
