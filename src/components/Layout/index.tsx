@@ -4,10 +4,10 @@ import { navigation } from '../../configs/navigation';
 
 export const Layout: FC = () => {
   return (
-    <div className='app'>
+    <div className="app">
       Header
-      <nav className='my-10'>
-        <ul className='flex justify-center gap-3'>
+      <nav className="my-10">
+        <ul className="flex justify-center gap-3">
           {navigation.map((item, index) => {
             return (
               <li key={index}>
@@ -17,7 +17,7 @@ export const Layout: FC = () => {
           })}
         </ul>
       </nav>
-      <main className='mb-20'>
+      <main className="mb-20">
         <Outlet />
       </main>
       Footer
