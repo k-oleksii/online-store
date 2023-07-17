@@ -1,26 +1,16 @@
+import { Header } from '@/components/Header';
+import { StyledLayout } from '@/theme/styles/layout/StyledLayout';
 import { FC } from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import { navigation } from '../../configs/navigation';
+import { Outlet } from 'react-router-dom';
 
 export const Layout: FC = () => {
   return (
-    <div className='app'>
-      Header
-      <nav className='my-10'>
-        <ul className='flex justify-center gap-3'>
-          {navigation.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link to={item.path}>{item.name}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+    <StyledLayout>
+      <Header />
       <main className='mb-20'>
         <Outlet />
       </main>
       Footer
-    </div>
+    </StyledLayout>
   );
 };
