@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -15,6 +16,11 @@ export default {
         green: '#008e24',
       },
     },
+    fontFamily: {
+      bruno: ['"Bruno Ace", cursive'],
+      lato: ['Lato, serif'],
+    },
+
     extend: {},
   },
   plugins: [],
