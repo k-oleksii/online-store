@@ -8,8 +8,8 @@ export const Header: FC = () => {
   return (
     <StyledHeader>
       <StyledContainer>
-        <div className='content'>
-          <Logo link='/' alt='City Wheels' />
+        <div className="content">
+          <Logo link="/" alt="City Wheels" />
           <Navigation />
         </div>
       </StyledContainer>

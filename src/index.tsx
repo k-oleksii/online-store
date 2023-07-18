@@ -8,7 +8,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from './App.js';
 import './index.css';
 import { store } from './lib/redux/init/store.js';
-// import theme from './theme/theme.js';
 import theme from './theme/theme.js';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
