@@ -36,4 +36,16 @@ export const bikesData = [
     description: 'Camouflage/Orange',
     price: 67.9,
   },
+  {
+    title: 'Willier Rave SLR',
+    img: `${bike}`,
+    description: 'Camouflage/Orange',
+    price: 67.9,
+  },
+  {
+    title: 'Willier Rave SLR',
+    img: `${bike}`,
+    description: 'Camouflage/Orange',
+    price: 67.9,
+  },
 ];

@@ -1,15 +1,15 @@
 import { styled } from 'styled-components';
 export const StyledMainContent = styled.div`
-  max-width: 1600px;
   height: 2676px;
-  background: #F8FAFF;
+  background: #f8faff;
   text-align: center;
   margin: 50px;
   display: flex;
   flex-direction: column;
   gap: 72px;
+  align-items: center;
 
-   h1 {
+  h1 {
     font-size: 50px;
     color: #fff;
   }

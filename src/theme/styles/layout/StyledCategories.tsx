@@ -5,6 +5,7 @@ export const StyledCategories = styled.div`
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 
   .category__container {
     position: relative;

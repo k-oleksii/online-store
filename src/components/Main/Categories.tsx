@@ -9,15 +9,13 @@ export const Categories: FC = () => {
     <StyledCategories>
       {categories.map((item, index) => (
         <div className="category__container" key={index}>
-          <img
-            className="category__img"
-            src={item.cardPic}
-            alt={item.category + ' pic'}
-          ></img>
           <Link to={item.path}>
-            <h2 className="category__header" >
-              {item.category}
-            </h2>
+            <img
+              className="category__img"
+              src={item.cardPic}
+              alt={item.category + ' pic'}
+            ></img>
+            <h2 className="category__header">{item.category}</h2>
           </Link>
         </div>
       ))}
