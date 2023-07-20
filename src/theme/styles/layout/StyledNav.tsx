@@ -7,6 +7,23 @@ export const StyledNav = styled.nav`
   }
 
   a {
-    ${tw`	`}
+    ${tw`relative`}
+
+    &::after {
+      ${tw`content-[""] absolute top-[calc(100% + 4px)]  right-0 left-0 h-[1px] bg-main-red opacity-0	transition-all duration-300`}
+    }
+
+    &:hover,
+    &:active {
+      &::after {
+        ${tw`opacity-50`}
+      }
+    }
+
+    &.active {
+      &::after {
+        ${tw`opacity-100`}
+      }
+    }
   }
 `;

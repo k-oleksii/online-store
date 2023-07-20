@@ -2,7 +2,7 @@ import { navigation } from '@/configs/navigation';
 import { StyledNav } from '@/theme/styles/layout/StyledNav';
 import { Typography } from '@mui/material';
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const Navigation: FC = () => {
   return (
@@ -11,11 +11,11 @@ export const Navigation: FC = () => {
         {navigation.map((item, index) => {
           return (
             <li key={index}>
-              <Link to={item.path}>
+              <NavLink to={item.path}>
                 <Typography variant="nav" component="span">
                   {item.name}
                 </Typography>
-              </Link>
+              </NavLink>
             </li>
           );
         })}
