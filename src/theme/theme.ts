@@ -1,12 +1,19 @@
+import { EnumBreakpoints } from '@/types/index.js';
 import { createTheme } from '@mui/material/styles';
-import tailwindConfig from '../../tailwind.config.js';
-
-const { fontFamily } = tailwindConfig.theme;
 
 const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: parseInt(EnumBreakpoints.mobile, 10),
+      sm: parseInt(EnumBreakpoints.tablet, 10),
+      md: parseInt(EnumBreakpoints.tabletPortrait, 10),
+      lg: parseInt(EnumBreakpoints.desktopSmall, 10),
+      xl: parseInt(EnumBreakpoints.desktopMedium, 10),
+    },
+  },
   typography: {
     h1: {
-      fontFamily: fontFamily.bruno,
+      fontFamily: '"Bruno Ace", cursive',
       fontSize: '64px',
       lineHeight: '72px',
     },
@@ -44,8 +51,14 @@ const theme = createTheme({
       lineHeight: '54px',
     },
     nav: {
-      fontSize: '26px',
-      lineHeight: '30px',
+      [`@media (min-width: ${EnumBreakpoints.tabletPortrait})`]: {
+        fontSize: '18px',
+        lineHeight: '24px',
+      },
+      [`@media (min-width: ${EnumBreakpoints.desktopMedium})`]: {
+        fontSize: '26px',
+        lineHeight: '30px',
+      },
     },
   },
 });

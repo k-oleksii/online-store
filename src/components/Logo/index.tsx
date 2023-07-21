@@ -10,8 +10,8 @@ interface ILogoProps {
 export const Logo: FC<ILogoProps> = ({ link, alt }) => {
   return (
     <StyledLogo>
-      <a href={link} className='link'>
-        <img src={logo} className='img' alt={alt} />
+      <a href={link} className="link">
+        <img src={logo} className="img" alt={alt} />
       </a>
     </StyledLogo>
   );

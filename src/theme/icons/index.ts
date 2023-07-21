@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { CartIcon } from './CartIcon';
+import { CloseIcon } from './CloseIcon';
 import { HeartIcon } from './HeartIcon';
 import { SearchIcon } from './SearchIcon';
 import { UserIcon } from './UserIcon';
@@ -13,4 +14,5 @@ export const icons: Icons = {
   heart: HeartIcon,
   cart: CartIcon,
   user: UserIcon,
+  close: CloseIcon,
 };

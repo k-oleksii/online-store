@@ -5,8 +5,10 @@ export default {
   theme: {
     colors: {
       main: {
+        white: '#fff',
         black: '#212121',
         red: '#dd2255',
+        transparent: 'transparent',
       },
 
       secondary: {
@@ -26,16 +28,11 @@ export default {
     container: {
       padding: {
         DEFAULT: '24px',
-        xl: '0',
-        '2xl': '0',
       },
     },
     screens: {
       sm: '100%',
-      md: '100%',
-      lg: '1024px',
-      xl: '1300px',
-      '2xl': '1600px',
+      '2xl': '1648px',
     },
     extend: {},
   },
