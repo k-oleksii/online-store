@@ -8,6 +8,7 @@ export const StyledCategories = styled.div`
   justify-content: center;
 
   .category__container {
+    max-width:90%;
     position: relative;
   }
   .category__img {
