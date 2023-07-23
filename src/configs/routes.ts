@@ -1,10 +1,10 @@
-import { Accessories } from '../pages/Accessories';
-import { Bicycles } from '../pages/Bicycles';
-import { Gyroboards } from '../pages/Gyroboards';
-import { Home } from '../pages/Home';
-import { Monowheels } from '../pages/Monowheels';
-import { Scooters } from '../pages/Scooters';
-import { Skateboards } from '../pages/Skateboards';
+import { Accessories } from '@/pages/Accessories';
+import { Bicycles } from '@/pages/Bicycles';
+import { Gyroboards } from '@/pages/Gyroboards';
+import { Home } from '@/pages/Home';
+import { Monowheels } from '@/pages/Monowheels';
+import { Scooters } from '@/pages/Scooters';
+import { Skateboards } from '@/pages/Skateboards';
 
 export const routes = [
   {
