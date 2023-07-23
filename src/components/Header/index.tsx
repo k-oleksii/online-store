@@ -44,7 +44,7 @@ export const Header: FC = () => {
             </StyledNavButton>
           )}
 
-          <Logo link="/" alt="City Wheels" />
+          <Logo link="/online-store/" alt="City Wheels" />
           <Navigation />
           <StyledOptions>
             {isMobileScreen && (

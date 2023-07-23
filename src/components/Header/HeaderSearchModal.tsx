@@ -3,7 +3,7 @@ import { getSearchOpen } from '@/lib/redux/selectors';
 import { StyledSearchDialog } from '@/theme/styles/layout/StyledHeader';
 import { Slide } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
-import { ReactElement, forwardRef } from 'react';
+import { FC, ReactElement, forwardRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { HeaderSearch } from './HeaderSearch';
 
@@ -22,7 +22,9 @@ const Transition = forwardRef<unknown, TransitionComponentProps>(
   }
 );
 
-export const HeaderSearchModal = () => {
+Transition.displayName = 'Transition';
+
+export const HeaderSearchModal: FC = () => {
   const dispatch = useDispatch();
   const isSearchOpen = useSelector(getSearchOpen);
 

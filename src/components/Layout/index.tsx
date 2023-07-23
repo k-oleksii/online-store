@@ -1,8 +1,8 @@
 import { Header } from '@/components/Header';
 import { StyledLayout } from '@/theme/styles/layout/StyledLayout';
-import { Typography } from '@mui/material';
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
+import { Footer } from '../Footer';
 
 export const Layout: FC = () => {
   return (
@@ -11,8 +11,7 @@ export const Layout: FC = () => {
       <main className="mb-20">
         <Outlet />
       </main>
-      Footer
-      <Typography variant="h1">Responsive h3</Typography>
+      <Footer />
     </StyledLayout>
   );
 };

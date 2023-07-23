@@ -1,6 +1,7 @@
 import logo from '@/assets/logo.svg';
 import { StyledLogo } from '@/theme/styles/layout/StyledLogo';
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 interface ILogoProps {
   link: string;
@@ -10,9 +11,9 @@ interface ILogoProps {
 export const Logo: FC<ILogoProps> = ({ link, alt }) => {
   return (
     <StyledLogo>
-      <a href={link} className="link">
+      <Link to={link}>
         <img src={logo} className="img" alt={alt} />
-      </a>
+      </Link>
     </StyledLogo>
   );
 };

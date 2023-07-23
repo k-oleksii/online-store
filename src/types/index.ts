@@ -4,6 +4,12 @@ export enum EnumIcons {
   cart = 'cart',
   user = 'user',
   close = 'close',
+  yt = 'yt',
+  inst = 'inst',
+  in = 'in',
+  fb = 'fb',
+  mail = 'mail',
+  send = 'send',
 }
 
 export enum EnumBreakpoints {

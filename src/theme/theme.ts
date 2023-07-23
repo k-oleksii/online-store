@@ -12,6 +12,8 @@ const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: 'Lato, serif',
+
     h1: {
       fontFamily: '"Bruno Ace", cursive',
       fontSize: '64px',
