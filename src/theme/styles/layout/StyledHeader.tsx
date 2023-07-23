@@ -108,44 +108,6 @@ export const StyledHeaderSearch = styled.div`
     }
   }
 
-  .MuiInputBase-root {
-    ${tw`h-16	px-8 font-lato text-xl text-main-black rounded-3xl`}
-
-    @media (max-width: ${EnumBreakpoints.tablet}) {
-      ${tw`h-14 px-4`}
-    }
-
-    .MuiInputAdornment-root {
-      ${tw`mr-6`};
-    }
-
-    svg {
-      ${tw`w-8 h-8 stroke-secondary-gray`}
-    }
-
-    &:hover {
-      .MuiOutlinedInput-notchedOutline {
-        ${tw`border-secondary-blue`};
-      }
-    }
-
-    .MuiInputBase-input {
-      &::placeholder {
-        ${tw`opacity-100`};
-      }
-    }
-
-    .MuiOutlinedInput-notchedOutline {
-      ${tw`border-secondary-blue`};
-    }
-
-    &.Mui-focused {
-      .MuiOutlinedInput-notchedOutline {
-        ${tw`border`};
-      }
-    }
-  }
-
   .MuiButtonBase-root {
     ${tw`p-0 cursor-pointer`}
 
