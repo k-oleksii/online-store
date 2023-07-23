@@ -1,6 +1,11 @@
 import { EnumBreakpoints } from '@/types';
+import { Dialog } from '@mui/material';
 import { styled } from 'styled-components';
 import tw from 'twin.macro';
+
+interface StyledHeaderSearchProps {
+  open?: boolean;
+}
 
 export const StyledHeader = styled.header`
   ${tw`fixed top-0 inset-x-0 py-8	backdrop-blur-lg`}
@@ -70,11 +75,25 @@ export const StyledOptions = styled.div`
   }
 `;
 
-export const StyledHeaderSearch = styled.div`
-  ${tw`fixed top-0 inset-x-0 py-12 z-[1000] bg-main-white transition-all duration-300	-translate-y-full`}
+export const StyledSearchDialog = styled(Dialog)<StyledHeaderSearchProps>`
+  .MuiBackdrop-root {
+    ${tw`bg-main-transparent`}
+  }
 
-  &.open {
-    ${tw`translate-y-0`}
+  .MuiDialog-container {
+    ${tw`h-auto`}
+  }
+
+  .MuiPaper-root {
+    ${tw`max-w-full w-full m-0 bg-main-transparent shadow-none rounded-none`}
+  }
+`;
+
+export const StyledHeaderSearch = styled.div`
+  ${tw`py-12 z-[1000] bg-main-white`}
+
+  @media (max-width: ${EnumBreakpoints.tablet}) {
+    ${tw`mt-4 py-2`}
   }
 
   .search-content {
@@ -83,10 +102,18 @@ export const StyledHeaderSearch = styled.div`
 
   .MuiFormControl-root {
     ${tw`relative z-20 w-[1000px] mx-auto`}
+
+    @media (max-width: ${EnumBreakpoints.tablet}) {
+      ${tw`w-full`}
+    }
   }
 
   .MuiInputBase-root {
     ${tw`h-16	px-8 font-lato text-xl text-main-black rounded-3xl`}
+
+    @media (max-width: ${EnumBreakpoints.tablet}) {
+      ${tw`h-14 px-4`}
+    }
 
     .MuiInputAdornment-root {
       ${tw`mr-6`};

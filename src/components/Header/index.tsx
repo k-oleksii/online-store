@@ -16,6 +16,7 @@ import { IconButton, useMediaQuery } from '@mui/material';
 import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { HeaderSearch } from './HeaderSearch';
+import { HeaderSearchModal } from './HeaderSearchModal';
 
 export const Header: FC = () => {
   const [open, setOpen] = useState(false);
@@ -45,9 +46,11 @@ export const Header: FC = () => {
 
           <Logo link="/" alt="City Wheels" />
           <Navigation />
-          <StyledOptions onClick={handleSearchBtnClick}>
+          <StyledOptions>
             {isMobileScreen && (
-              <IconButton>{getIcon(EnumIcons.search)}</IconButton>
+              <IconButton onClick={handleSearchBtnClick}>
+                {getIcon(EnumIcons.search)}
+              </IconButton>
             )}
 
             <IconButton>{getIcon(EnumIcons.heart)}</IconButton>
@@ -56,7 +59,7 @@ export const Header: FC = () => {
           </StyledOptions>
         </div>
       </StyledContainer>
-      <HeaderSearch />
+      {!isMobileScreen ? <HeaderSearch /> : <HeaderSearchModal />}
     </StyledHeader>
   );
 };
