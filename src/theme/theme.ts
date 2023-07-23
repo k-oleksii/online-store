@@ -63,6 +63,72 @@ const theme = createTheme({
       },
     },
   },
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiInputBase-root': {
+            padding: '0 32px',
+
+            '& fieldset': {
+              borderColor: '#8083ff',
+              borderRadius: '24px',
+
+              [`@media (max-width: ${EnumBreakpoints.tablet})`]: {
+                borderRadius: '16px',
+              },
+            },
+
+            '&:hover fieldset': {
+              borderColor: '#8083ff',
+            },
+
+            '&.Mui-focused fieldset': {
+              borderWidth: '1px',
+              borderColor: '#8083ff',
+            },
+
+            '& .MuiInputAdornment-root': {
+              marginRight: '24px',
+
+              '& svg': {
+                width: '32px',
+                height: '32px',
+                stroke: '#878d99',
+              },
+
+              [`@media (max-width: ${EnumBreakpoints.tablet})`]: {
+                marginRight: '8px',
+
+                '& svg': {
+                  width: '24px',
+                  height: '24px',
+                },
+              },
+            },
+
+            '& .MuiInputBase-input': {
+              boxSizing: 'border-box',
+              height: '64px',
+              padding: '0',
+              fontSize: '20px',
+              color: '#212121',
+
+              '&::placeholder': {
+                color: '#878d99',
+                opacity: '1',
+              },
+
+              [`@media (max-width: ${EnumBreakpoints.tablet})`]: {
+                height: '40px',
+                fontSize: '15px',
+              },
+            },
+          },
+        },
+      },
+    },
+  },
 });
 
 export default theme;

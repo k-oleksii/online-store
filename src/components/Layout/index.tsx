@@ -3,6 +3,7 @@ import { StyledLayout } from '@/theme/styles/layout/StyledLayout';
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Footer } from '../Footer';
+import { Newsletter } from '../Newsletter';
 
 export const Layout: FC = () => {
   return (
@@ -11,6 +12,7 @@ export const Layout: FC = () => {
       <main className="mb-20">
         <Outlet />
       </main>
+      <Newsletter />
       <Footer />
     </StyledLayout>
   );

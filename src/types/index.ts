@@ -13,7 +13,7 @@ export enum EnumIcons {
 }
 
 export enum EnumBreakpoints {
-  mobile = '576px',
+  mobile = '600px',
   tablet = '768px',
   tabletPortrait = '1023px',
   desktopSmall = '1280px',

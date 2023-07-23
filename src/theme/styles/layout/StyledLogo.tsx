@@ -1,14 +1,15 @@
 import { EnumBreakpoints } from '@/types';
 import { styled } from 'styled-components';
+import tw from 'twin.macro';
 
 export const StyledLogo = styled.div`
-  max-width: 172px;
+  ${tw`max-w-[172px]`}
 
   @media (max-width: ${EnumBreakpoints.desktopMedium}) {
-    max-width: 100px;
+    ${tw`max-w-[100px]`}
   }
 
   @media (max-width: ${EnumBreakpoints.mobile}) {
-    max-width: 50px;
+    ${tw`max-w-[50px]`}
   }
 `;
