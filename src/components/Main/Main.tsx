@@ -8,7 +8,6 @@ import { CustomSlider } from '@/ui/CustomSlider';
 import { Like } from '@/ui/Like';
 import { Raiting } from '@/ui/Raiting';
 import { Buy } from '@/ui/Buy';
-import { Button } from '@/ui/Button';
 
 export const Main: FC = () => {
   return (
@@ -37,7 +36,6 @@ export const Main: FC = () => {
           raiting={<Raiting />}
           buyButton={<Buy />}
         />
-        <Button />
       </StyledMainContent>
     </StyledMain>
   );

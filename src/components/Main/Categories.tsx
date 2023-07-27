@@ -9,7 +9,7 @@ export const Categories: FC = () => {
     <StyledCategories>
       {categories.map((item, index) => (
         <div className="category__container" key={index}>
-          <Link to={item.path}>
+          <Link className="category__link" to={item.path}>
             <img
               className="category__img"
               src={item.cardPic}

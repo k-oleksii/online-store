@@ -35,27 +35,41 @@ export const CustomSlider: FC<SliderProps> = ({
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1680,
         settings: {
-          slidesToShow: 6,
-          slidesToScroll: 3,
+          slidesToShow: 4,
+          slidesToScroll: 1,
           infinite: true,
           dots: false,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 1420,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 1,
           initialSlide: 2,
           dots: false,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 1280,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 980,
+        settings: {
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -66,7 +80,7 @@ export const CustomSlider: FC<SliderProps> = ({
       <div className="product__header">
         <h2>{headerName}</h2>
       </div>
-      <Slider {...settings}>
+      <Slider {...settings} className="product__slider">
         {bikesData?.map((item, index) => (
           <div className="product__singleCart" key={index}>
             <div className="product__like">

@@ -31,11 +31,46 @@ xmlns="http://www.w3.org/2000/svg"
 </svg>`;
 
 export const StyledCustomSlider = styled.div`
-  max-width: 1600px;
+  max-width: 1620px;
   height: 572px;
-  display: flex ;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  .slick-list {
+    max-width: 1620px;
+    transition: max-width 0.3s ease-out;
+  }
+  @media (max-width: 1680px) {
+    .slick-list {
+      max-width: 1420px;
+    }
+  }
+  @media (max-width: 1420px) {
+    .slick-list {
+      max-width: 1048px;
+    }
+  }
+  @media (max-width: 1280px) {
+    .slick-list {
+      max-width: 900px;
+    }
+  }
+  @media (max-width: 980px) {
+    .slick-list {
+      max-width: 600px;
+    }
+  }
+  .slick-slide,
+  .slick-active,
+  .slick-current {
+    width: 250px !important;
+  }
+  .slick-track {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
 
   .product__singleCart {
     height: 500px;
@@ -100,6 +135,13 @@ export const StyledCustomSlider = styled.div`
   .slick-prev:before,
   .slick-next:before {
     color: black;
+    transition: display 0.8s easy-out;
+  }
+  @media (max-width: 1280px) {
+    .slick-prev:before,
+    .slick-next:before {
+      display: none;
+    }
   }
 
   .slick-prev:before {

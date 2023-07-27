@@ -13,4 +13,7 @@ export const StyledMainContent = styled.div`
     font-size: 50px;
     color: #fff;
   }
+  @media (max-width: 980px) {
+    gap:22px;
+  }
 `;
