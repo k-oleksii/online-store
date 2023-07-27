@@ -19,8 +19,8 @@ export const Footer = () => {
   return (
     <StyledFooter>
       <StyledContainer>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
+        <Grid container spacing={{ xs: 4, md: 2 }}>
+          <Grid item xs={12} md={6}>
             <div className="flex flex-col h-full">
               <Logo link="/online-store/" alt="City Wheels" />
               <StyledSocials>
@@ -44,8 +44,8 @@ export const Footer = () => {
               </StyledSocials>
             </div>
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <div className="flex justify-end gap-x-[151px]">
+          <Grid item xs={12} md={6}>
+            <div className="flex md:justify-end">
               <StyledMenu>
                 <Typography variant="h4" component="span">
                   Sitemap
