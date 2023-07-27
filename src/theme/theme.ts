@@ -1,12 +1,34 @@
 import { EnumBreakpoints } from '@/types/index.js';
 import { createTheme } from '@mui/material/styles';
 
+declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    body3: React.CSSProperties;
+    nameCards: React.CSSProperties;
+    nav: React.CSSProperties;
+  }
+
+  interface TypographyVariantsOptions {
+    body3?: React.CSSProperties;
+    nameCards?: React.CSSProperties;
+    nav?: React.CSSProperties;
+  }
+}
+
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    body3: true;
+    nameCards: true;
+    nav: true;
+  }
+}
+
 const theme = createTheme({
   breakpoints: {
     values: {
-      xs: parseInt(EnumBreakpoints.mobile, 10),
-      sm: parseInt(EnumBreakpoints.tablet, 10),
-      md: parseInt(EnumBreakpoints.tabletPortrait, 10),
+      xs: 0,
+      sm: parseInt(EnumBreakpoints.mobile, 10),
+      md: parseInt(EnumBreakpoints.tablet, 10),
       lg: parseInt(EnumBreakpoints.desktopSmall, 10),
       xl: parseInt(EnumBreakpoints.desktopMedium, 10),
     },
@@ -36,16 +58,16 @@ const theme = createTheme({
       fontWeight: '700',
       lineHeight: '32px',
     },
-    bodyM: {
+    body1: {
       fontSize: '20px',
       lineHeight: '24px',
     },
-    bodyS: {
+    body2: {
       fontSize: '14px',
       lineHeight: '20px',
     },
-    bodyXS: {
-      fontSize: '8px',
+    body3: {
+      fontSize: 8,
       lineHeight: '11px',
     },
     nameCards: {
