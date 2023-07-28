@@ -20,6 +20,6 @@
       "@/*": ["*"]
     }
   },
-  "include": ["src", "window.d.ts"],
+  "include": ["src", "window.d.ts", "src/theme/icons/.tsx"],
   "exclude": ["node_modules", "build", "dist"]
 }

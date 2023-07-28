@@ -15,11 +15,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <StyledGlobal />
     <Provider store={store}>
-      <Router>
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <Router>
           <App />
-        </ThemeProvider>
-      </Router>
+        </Router>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );
