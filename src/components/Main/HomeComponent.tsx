@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { StyledMain } from '@/theme/styles/layout/StyledMain';
-import { StyledMainContent } from '@/theme/styles/layout/StyledMainContent';
+import { StyledHome } from '@/theme/styles/layout/StyledHome';
+import { StyledHomeContent } from '@/theme/styles/layout/StyledHomeContent';
 import { Categories } from './Categories';
 import { Sale } from '@/ui/Sale';
 import { bikesData } from '@/mock-data/products';
@@ -8,11 +8,25 @@ import { CustomSlider } from '@/ui/CustomSlider';
 import { Like } from '@/ui/Like';
 import { Raiting } from '@/ui/Raiting';
 import { Buy } from '@/ui/Buy';
+import {
+  StyledHeroFrame,
+  StyledButton,
+  StyledHero,
+} from '@/theme/styles/layout/StyledHomeBanner';
 
-export const Main: FC = () => {
+export const HomeComponent: FC = () => {
   return (
-    <StyledMain>
-      <StyledMainContent>
+    <StyledHome>
+      <StyledHero>
+        <StyledHeroFrame>
+          <h2>Faster on wheels</h2>
+          <p>Buy new wheels for yourself and move with pleasure</p>
+          <StyledButton>
+            <p>Button</p>
+          </StyledButton>
+        </StyledHeroFrame>
+      </StyledHero>
+      <StyledHomeContent>
         <Categories />
         <CustomSlider
           bikesData={bikesData}
@@ -36,7 +50,7 @@ export const Main: FC = () => {
           raiting={<Raiting />}
           buyButton={<Buy />}
         />
-      </StyledMainContent>
-    </StyledMain>
+      </StyledHomeContent>
+    </StyledHome>
   );
 };

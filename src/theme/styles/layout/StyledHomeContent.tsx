@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-export const StyledMainContent = styled.div`
+export const StyledHomeContent = styled.div`
   height: 2676px;
   background: #f8faff;
   text-align: center;
