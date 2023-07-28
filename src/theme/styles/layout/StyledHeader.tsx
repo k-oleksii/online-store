@@ -8,7 +8,7 @@ interface StyledHeaderSearchProps {
 }
 
 export const StyledHeader = styled.header`
-  ${tw`fixed top-0 inset-x-0 py-8	backdrop-blur-lg`}
+  ${tw`fixed top-0 inset-x-0 py-8	backdrop-blur-lg z-50`}
 
   .content {
     ${tw`flex items-center`}
