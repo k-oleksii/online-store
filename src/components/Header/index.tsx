@@ -38,9 +38,8 @@ export const Header: FC = () => {
     <StyledHeader>
       <StyledContainer>
         <div className="content">
-<<<<<<< HEAD
           <Logo link="/" alt="City Wheels" />
-=======
+
           {isTabletPortraitScreen && (
             <StyledNavButton onClick={() => setOpen(!open)}>
               {!open ? <MenuIcon /> : <MenuOpenIcon />}
@@ -48,7 +47,7 @@ export const Header: FC = () => {
           )}
 
           <Logo link="/online-store/" alt="City Wheels" />
->>>>>>> cb825d7b4e520d6a6b20a685a6d4037e1f02cbff
+
           <Navigation />
           <StyledOptions>
             {isMobileScreen && (
