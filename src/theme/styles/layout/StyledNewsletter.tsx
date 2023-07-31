@@ -34,12 +34,18 @@ export const StyledNewsletter = styled.div`
     ${tw`flex-1 mr-6`}
 
     .MuiInputBase-root {
+      ${tw`px-6`}
+
       .MuiInputBase-input {
         ${tw`h-12`}
       }
 
       fieldset {
-        ${tw`rounded-2xl	`}
+        ${tw`p-0 rounded-2xl`}
+      }
+
+      .MuiInputAdornment-root {
+        ${tw`mr-2`}
       }
     }
   }
