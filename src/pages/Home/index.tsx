@@ -1,6 +1,6 @@
-import { Typography } from '@mui/material';
+import { HomeComponent } from '@/components/Main/HomeComponent';
 import { FC } from 'react';
 
 export const Home: FC = () => {
-  return <Typography>Home</Typography>;
+  return <HomeComponent />;
 };

@@ -8,10 +8,20 @@ interface StyledHeaderSearchProps {
 }
 
 export const StyledHeader = styled.header`
-  ${tw`fixed top-0 inset-x-0 py-8	backdrop-blur-lg`}
+  ${tw`fixed top-0 inset-x-0 py-8 z-50`};
+  background-image: linear-gradient(
+    209deg,
+    rgba(251, 251, 251, 0.9) 0%,
+    rgba(251, 251, 251, 0.64) 54.41%,
+    rgba(251, 251, 251, 0.4) 100%
+  );
+
+  &::before {
+    ${tw`content-[''] absolute inset-y-0 inset-x-0 backdrop-blur	overflow-hidden`}
+  }
 
   .content {
-    ${tw`flex items-center`}
+    ${tw`relative flex items-center`}
   }
 `;
 

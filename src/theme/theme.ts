@@ -6,12 +6,14 @@ declare module '@mui/material/styles' {
     body3: React.CSSProperties;
     nameCards: React.CSSProperties;
     nav: React.CSSProperties;
+    subtitle: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
     body3?: React.CSSProperties;
     nameCards?: React.CSSProperties;
     nav?: React.CSSProperties;
+    subtitle?: React.CSSProperties;
   }
 }
 
@@ -20,6 +22,7 @@ declare module '@mui/material/Typography' {
     body3: true;
     nameCards: true;
     nav: true;
+    subtitle: true;
   }
 }
 
@@ -40,6 +43,11 @@ const theme = createTheme({
       fontFamily: '"Bruno Ace", cursive',
       fontSize: '64px',
       lineHeight: '72px',
+
+      [`@media (max-width: ${EnumBreakpoints.tabletPortrait})`]: {
+        fontSize: '24px',
+        lineHeight: '30x',
+      },
     },
     h2: {
       fontSize: '34px',
@@ -67,8 +75,17 @@ const theme = createTheme({
       lineHeight: '20px',
     },
     body3: {
-      fontSize: 8,
+      fontSize: '8px',
       lineHeight: '11px',
+    },
+    subtitle: {
+      fontSize: '32px',
+      lineHeight: '38px',
+
+      [`@media (max-width: ${EnumBreakpoints.tabletPortrait})`]: {
+        fontSize: '20px',
+        lineHeight: '28x',
+      },
     },
     nameCards: {
       fontSize: '45px',
