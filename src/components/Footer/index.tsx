@@ -45,7 +45,7 @@ export const Footer = () => {
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <div className="flex md:justify-end">
+            <div className="flex justify-end sm:justify-start">
               <StyledMenu>
                 <Typography variant="h4" component="span">
                   Sitemap
