@@ -2,18 +2,9 @@ import { EnumBreakpoints } from '@/types/index.js';
 import { createTheme } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
-  interface TypographyVariants {
-    body3: React.CSSProperties;
-    nameCards: React.CSSProperties;
-    nav: React.CSSProperties;
-    subtitle: React.CSSProperties;
-  }
-
   interface TypographyVariantsOptions {
     body3?: React.CSSProperties;
     nameCards?: React.CSSProperties;
-    nav?: React.CSSProperties;
-    subtitle?: React.CSSProperties;
   }
 }
 
@@ -21,8 +12,6 @@ declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     body3: true;
     nameCards: true;
-    nav: true;
-    subtitle: true;
   }
 }
 
@@ -41,8 +30,8 @@ const theme = createTheme({
 
     h1: {
       fontFamily: '"Bruno Ace", cursive',
-      fontSize: '64px',
-      lineHeight: '72px',
+      fontSize: '32px',
+      lineHeight: '39px',
 
       [`@media (max-width: ${EnumBreakpoints.tabletPortrait})`]: {
         fontSize: '24px',
@@ -50,119 +39,123 @@ const theme = createTheme({
       },
     },
     h2: {
-      fontSize: '34px',
-      lineHeight: '38px',
+      fontSize: '24px',
+      lineHeight: '27px',
     },
     h3: {
-      fontSize: '26px',
-      lineHeight: '30px',
-    },
-    h4: {
       fontSize: '20px',
-      lineHeight: '26px',
+      lineHeight: '24px',
     },
     button: {
-      fontSize: '26px',
+      fontSize: '16px',
       fontWeight: '700',
       lineHeight: '32px',
     },
     body1: {
-      fontSize: '20px',
-      lineHeight: '24px',
+      fontSize: '16px',
+      lineHeight: '25px',
     },
     body2: {
       fontSize: '14px',
       lineHeight: '20px',
     },
     body3: {
-      fontSize: '8px',
-      lineHeight: '11px',
-    },
-    subtitle: {
-      fontSize: '32px',
-      lineHeight: '38px',
-
-      [`@media (max-width: ${EnumBreakpoints.tabletPortrait})`]: {
-        fontSize: '20px',
-        lineHeight: '28x',
-      },
+      fontSize: '10px',
+      lineHeight: '14px',
     },
     nameCards: {
       fontSize: '45px',
       lineHeight: '54px',
     },
-    nav: {
-      [`@media (min-width: ${EnumBreakpoints.tabletPortrait})`]: {
-        fontSize: '18px',
-        lineHeight: '24px',
-      },
-      [`@media (min-width: ${EnumBreakpoints.desktopMedium})`]: {
-        fontSize: '26px',
-        lineHeight: '30px',
-      },
-    },
   },
   components: {
-    MuiTextField: {
+    MuiFormControl: {
       styleOverrides: {
         root: {
-          '& .MuiInputBase-root': {
-            padding: '0 32px',
+          '&:before, &:after': {
+            display: 'none',
+          },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          height: '40px',
+          padding: '0 24px',
+          border: '1px solid #878d99',
+          borderRadius: '12px',
 
-            '& fieldset': {
-              borderColor: '#8083ff',
-              borderRadius: '24px',
+          '& fieldset': {
+            top: '0',
+            padding: '0',
+            border: 'none',
+            borderRadius: '0',
+          },
 
-              [`@media (max-width: ${EnumBreakpoints.tablet})`]: {
-                borderRadius: '16px',
-              },
+          '& input': {
+            padding: '0',
+
+            '&::placeholder': {
+              color: '#878d99',
             },
+          },
+        },
+      },
+    },
+    MuiInputAdornment: {
+      styleOverrides: {
+        root: {
+          minWidth: '24px',
+          height: '24px',
+          marginRight: '8px',
+          stroke: '#878d99',
 
-            '&:hover fieldset': {
-              borderColor: '#8083ff',
-            },
+          '& svg': {
+            width: '100%',
+            height: '100%',
+          },
+        },
+      },
+    },
 
-            '&.Mui-focused fieldset': {
-              borderWidth: '1px',
-              borderColor: '#8083ff',
-            },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          // borderRadius: '5px',
+        },
+        // sizeSmall: {
+        //   borderRadius: '10px',
+        // },
+        sizeLarge: {
+          borderRadius: '5px',
+        },
+        contained: {
+          color: '#fff',
+          backgroundColor: '#212121',
+          borderRadius: '12px',
+          boxShadow: 'none',
 
-            '& .MuiInputAdornment-root': {
-              marginRight: '24px',
+          '&:hover': {
+            backgroundColor: '#dd2255',
+          },
 
-              '& svg': {
-                width: '32px',
-                height: '32px',
-                stroke: '#878d99',
-              },
+          '&:active': {
+            backgroundColor: '#c23158',
+          },
 
-              [`@media (max-width: ${EnumBreakpoints.tablet})`]: {
-                marginRight: '8px',
+          '&:disabled': {
+            color: '#fff',
+            backgroundColor: '#878d99',
+          },
 
-                '& svg': {
-                  width: '24px',
-                  height: '24px',
-                },
-              },
-            },
+          // '&:focus': {
+          //   outline: '4px solid #c23158',
+          // },
 
-            '& .MuiInputBase-input': {
-              boxSizing: 'border-box',
-              height: '64px',
-              padding: '0',
-              fontSize: '20px',
-              color: '#212121',
-
-              '&::placeholder': {
-                color: '#878d99',
-                opacity: '1',
-              },
-
-              [`@media (max-width: ${EnumBreakpoints.tablet})`]: {
-                height: '40px',
-                fontSize: '15px',
-              },
-            },
+          '&:hover, &:focus': {
+            boxShadow: 'none',
           },
         },
       },

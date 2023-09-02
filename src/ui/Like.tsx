@@ -1,6 +1,5 @@
-import { FC } from 'react';
-import { useState } from 'react';
-import { StyledLike } from '@/theme/styles/layout/StledLike';
+import { StyledLike } from '@/theme/styles/components/StledLike';
+import { FC, useState } from 'react';
 
 export const Like: FC = () => {
   const [isLiked, setIsLiked] = useState(false);

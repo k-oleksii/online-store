@@ -1,5 +1,5 @@
+import { StyledBtn } from '@/theme/styles/components/StyledBtn';
 import { FC } from 'react';
-import { StyledBtn } from '@/theme/styles/layout/StyledBtn';
 
 export const Button: FC = () => {
   return (

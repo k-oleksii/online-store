@@ -3,9 +3,9 @@ import { Navigation } from '@/components/Navigation';
 import { getIcon } from '@/helpers/getIcon';
 import {
   StyledHeader,
+  StyledNavButton,
   StyledOptions,
 } from '@/theme/styles/layout/StyledHeader';
-import { StyledNavButton } from '@/theme/styles/layout/StyledNav';
 import { StyledContainer } from '@/theme/styles/layout/StyledWrappers';
 import { EnumBreakpoints, EnumIcons } from '@/types';
 import MenuIcon from '@mui/icons-material/Menu';

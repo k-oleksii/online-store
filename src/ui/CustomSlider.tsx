@@ -1,8 +1,8 @@
+import { StyledCustomSlider } from '@/theme/styles/components/StyledCustomSlider';
 import React, { FC } from 'react';
 import Slider from 'react-slick';
-import { StyledCustomSlider } from '@/theme/styles/layout/StyledCustomSlider';
-import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 
 interface SliderProps {
   saleComponent?: React.ReactNode;

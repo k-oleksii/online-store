@@ -1,5 +1,5 @@
 import { EnumBreakpoints } from '@/types';
-import { Dialog } from '@mui/material';
+import { Dialog, IconButton } from '@mui/material';
 import { styled } from 'styled-components';
 import tw from 'twin.macro';
 
@@ -8,7 +8,7 @@ interface StyledHeaderSearchProps {
 }
 
 export const StyledHeader = styled.header`
-  ${tw`fixed top-0 inset-x-0 py-8 z-50`};
+  ${tw`fixed top-0 inset-x-0 py-[22px] z-50`};
   background-image: linear-gradient(
     209deg,
     rgba(251, 251, 251, 0.9) 0%,
@@ -41,11 +41,7 @@ export const StyledOptions = styled.div`
   }
 
   svg {
-    ${tw`w-8 h-8 stroke-main-black transition-all`}
-
-    @media (max-width: ${EnumBreakpoints.desktopMedium}) {
-      ${tw`w-6 h-6`}
-    }
+    ${tw`w-6 h-6 stroke-main-black transition-all`}
 
     &.icon-cart {
       path:first-child {
@@ -135,4 +131,41 @@ export const StyledHeaderSearch = styled.div`
       }
     }
   }
+`;
+
+export const StyledNav = styled.nav`
+  margin: 0 auto;
+
+  @media (max-width: ${EnumBreakpoints.tabletPortrait}) {
+    ${tw`hidden`}
+  }
+
+  .list {
+    ${tw`flex items-center gap-x-8`}
+  }
+
+  a {
+    ${tw`relative block`}
+
+    &::after {
+      ${tw`content-[""] absolute top-[calc(100% + 4px)]  right-0 left-0 h-[1px] bg-main-red opacity-0	transition-all duration-300`}
+    }
+
+    &:hover,
+    &:active {
+      &::after {
+        ${tw`opacity-50`}
+      }
+    }
+
+    &.active {
+      &::after {
+        ${tw`opacity-100`}
+      }
+    }
+  }
+`;
+
+export const StyledNavButton = styled(IconButton)`
+  ${tw`cursor-pointer`}
 `;

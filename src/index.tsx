@@ -1,4 +1,4 @@
-import { StyledGlobal } from '@/theme/styles/layout/StyledGlobal.js';
+import { StyledGlobal } from '@/theme/styles/base/StyledGlobal.js';
 import { ThemeProvider } from '@mui/material/styles';
 import React from 'react';
 import ReactDOM from 'react-dom/client';

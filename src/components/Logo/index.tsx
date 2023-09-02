@@ -1,5 +1,5 @@
 import logo from '@/assets/logo.svg';
-import { StyledLogo } from '@/theme/styles/layout/StyledLogo';
+import { StyledLogo } from '@/theme/styles/components/StyledLogo';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 

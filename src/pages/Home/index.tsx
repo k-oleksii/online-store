@@ -1,6 +1,7 @@
-import { HomeComponent } from '@/components/Main/HomeComponent';
+
+import { Home } from '@/components/Home';
 import { FC } from 'react';
 
-export const Home: FC = () => {
-  return <HomeComponent />;
+export const HomePage: FC = () => {
+  return <Home />;
 };

@@ -30,7 +30,7 @@ export const StyledNewsletter = styled.div`
     ${tw`flex`}
   }
 
-  .MuiFormControl-root {
+  /* .MuiFormControl-root {
     ${tw`flex-1 mr-6`}
 
     .MuiInputBase-root {
@@ -48,7 +48,7 @@ export const StyledNewsletter = styled.div`
         ${tw`mr-2`}
       }
     }
-  }
+  } */
 `;
 
 export const StyledNewsletterButton = styled(IconButton)`

@@ -25,16 +25,13 @@ export default {
       lato: ['Lato, serif'],
     },
 
-    container: {
-      padding: {
-        DEFAULT: '24px',
+    extend: {
+      maxWidth: {
+        // '5xl': '1024px',
+        // '6xl': '1280px',
+        '7xl': '1420px',
       },
     },
-    screens: {
-      sm: '100%',
-      '2xl': '1648px',
-    },
-    extend: {},
   },
   plugins: [],
 };

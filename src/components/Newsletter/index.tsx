@@ -2,7 +2,7 @@ import { getIcon } from '@/helpers/getIcon';
 import {
   StyledNewsletter,
   StyledNewsletterButton,
-} from '@/theme/styles/layout/StyledNewsletter';
+} from '@/theme/styles/components/StyledNewsletter';
 import { StyledContainer } from '@/theme/styles/layout/StyledWrappers';
 import { EnumIcons } from '@/types';
 import { InputAdornment, TextField, Typography } from '@mui/material';

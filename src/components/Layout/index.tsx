@@ -9,7 +9,7 @@ export const Layout: FC = () => {
   return (
     <StyledLayout>
       <Header />
-      <main className="mb-20">
+      <main className="flex flex-col gap-y-14 mb-14">
         <Outlet />
       </main>
       <Newsletter />
