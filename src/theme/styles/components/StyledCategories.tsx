@@ -19,10 +19,10 @@ export const StyledCategoriesContainer = styled.div`
 `;
 
 export const StyledCategory = styled.article`
-  ${tw`block max-h-[266px] overflow-hidden`}
+  ${tw`block max-h-[266px]`}
 
   a {
-    ${tw`relative`}
+    ${tw`relative block overflow-hidden rounded-3xl`}
 
     &:hover {
       img {
@@ -36,6 +36,6 @@ export const StyledCategory = styled.article`
   }
 
   .title {
-    ${tw`absolute bottom-6 left-8 w-[calc(100% - 32px)] font-bruno text-main-white`}
+    ${tw`absolute bottom-6 left-8 w-[calc(100% - 32px)] text-main-white`}
   }
 `;

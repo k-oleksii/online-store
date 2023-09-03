@@ -1,5 +1,6 @@
 export enum EnumIcons {
   search = 'search',
+  star = 'star',
   heart = 'heart',
   cart = 'cart',
   user = 'user',
@@ -10,6 +11,8 @@ export enum EnumIcons {
   fb = 'fb',
   mail = 'mail',
   send = 'send',
+  arrowLeft = 'arrowLeft',
+  arrowRight = 'arrowRight',
 }
 
 export enum EnumBreakpoints {
@@ -21,4 +24,15 @@ export enum EnumBreakpoints {
 }
 export interface IIconClassProps {
   iconClass: string;
+}
+
+export interface ICardProps {
+  path: string;
+  title: string;
+  img: string;
+  imgWebp: string;
+  price: number;
+  oldPrice?: number;
+  sale?: boolean;
+  rating?: number;
 }

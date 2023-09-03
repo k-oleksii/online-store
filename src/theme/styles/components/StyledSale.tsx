@@ -1,12 +1,6 @@
 import { styled } from 'styled-components';
+import tw from 'twin.macro';
+
 export const StyledSale = styled.div`
-  display: flex;
-  width: 95px;
-  padding: 8px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 0px 4px 4px 0px;
-  background: #dd2255;
-  color: #fbfbfb;
+  ${tw`flex items-center justify-center	w-[95px] h-[28px] text-main-white bg-main-red rounded-r`}
 `;

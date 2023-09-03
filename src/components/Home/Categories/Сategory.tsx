@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom';
 
 interface ICategoryType {
   cardPic: string;
+  cardPicWebp: string;
   path: string;
   category: string;
 }
 
-export const Category: FC<ICategoryType> = ({ cardPic, path, category }) => {
+export const Category: FC<ICategoryType> = ({ cardPic, cardPicWebp, path, category,  }) => {
   return (
     <StyledCategory>
       <Link to={path}>
-        <img src={cardPic} alt={category} />
-        <Image src={cardPic} webp={cardPic} />
+        <Image src={cardPic} webp={cardPicWebp} />
         <Typography variant="h2" component="h2" className="title">
           {category}
         </Typography>

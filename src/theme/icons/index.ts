@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { ArrowIconLeft } from './ArrowIconLeft';
+import { ArrowIconRight } from './ArrowIconRight';
 import { CartIcon } from './CartIcon';
 import { CloseIcon } from './CloseIcon';
 import { FbIcon } from './FbIcon';
@@ -8,6 +10,7 @@ import { InstIcon } from './InstIcon';
 import { MailIcon } from './MailIcon';
 import { SearchIcon } from './SearchIcon';
 import { SendIcon } from './SendIcon';
+import { StarIcon } from './StarIcon';
 import { UserIcon } from './UserIcon';
 import { YtIcon } from './YtIcon';
 
@@ -27,4 +30,7 @@ export const icons: Icons = {
   yt: YtIcon,
   mail: MailIcon,
   send: SendIcon,
+  star: StarIcon,
+  arrowLeft: ArrowIconLeft,
+  arrowRight: ArrowIconRight,
 };

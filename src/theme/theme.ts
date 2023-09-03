@@ -4,14 +4,16 @@ import { createTheme } from '@mui/material/styles';
 declare module '@mui/material/styles' {
   interface TypographyVariantsOptions {
     body3?: React.CSSProperties;
-    nameCards?: React.CSSProperties;
+    newPrice?: React.CSSProperties;
+    oldPrice?: React.CSSProperties;
   }
 }
 
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     body3: true;
-    nameCards: true;
+    newPrice: true;
+    oldPrice: true;
   }
 }
 
@@ -39,6 +41,7 @@ const theme = createTheme({
       },
     },
     h2: {
+      fontFamily: '"Bruno Ace", cursive',
       fontSize: '24px',
       lineHeight: '27px',
     },
@@ -57,15 +60,23 @@ const theme = createTheme({
     },
     body2: {
       fontSize: '14px',
-      lineHeight: '20px',
+      lineHeight: '19px',
     },
     body3: {
       fontSize: '10px',
       lineHeight: '14px',
     },
-    nameCards: {
-      fontSize: '45px',
-      lineHeight: '54px',
+    newPrice: {
+      fontSize: '24px',
+      fontWeight: '900',
+      lineHeight: '29px',
+    },
+    oldPrice: {
+      fontSize: '16px',
+      fontWeight: '700',
+      lineHeight: '19px',
+      textDecoration: 'line-through',
+      color: '#878d99',
     },
   },
   components: {

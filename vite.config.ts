@@ -1,29 +1,42 @@
-import viteImagemin from '@vheemstra/vite-plugin-imagemin';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
 import macrosPlugin from 'vite-plugin-babel-macros';
+import ViteImagemin from 'vite-plugin-imagemin';
+
 
 
 // The minifiers you want to use:
-import imageminJpeg from 'imagemin-mozjpeg';
-import imageminPng from 'imagemin-pngquant';
-import imageminWebp from 'imagemin-webp';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    viteImagemin({
-      plugins: {
-        jpg: imageminJpeg(),
-        png: imageminPng(),
+    ViteImagemin({
+      gifsicle: {
+        optimizationLevel: 7,
+        interlaced: false,
       },
-      makeWebp: {
-        plugins: {
-          jpg: imageminWebp(),
-          png: imageminWebp(),
-        },
+      optipng: {
+        optimizationLevel: 7,
+      },
+      mozjpeg: {
+        quality: 80,
+      },
+      pngquant: {
+        quality: [0.8, 0.9],
+        speed: 4,
+      },
+      svgo: {
+        plugins: [
+          {
+            name: 'removeViewBox',
+          },
+          {
+            name: 'removeEmptyAttrs',
+            active: false,
+          },
+        ],
       },
     }),
     macrosPlugin(),
