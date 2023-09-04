@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { ArrowIconLeft } from './ArrowIconLeft';
+import { ArrowIconLong } from './ArrowIconLong';
 import { ArrowIconRight } from './ArrowIconRight';
 import { CartIcon } from './CartIcon';
 import { CloseIcon } from './CloseIcon';
@@ -33,4 +34,5 @@ export const icons: Icons = {
   star: StarIcon,
   arrowLeft: ArrowIconLeft,
   arrowRight: ArrowIconRight,
+  arrowLong: ArrowIconLong,
 };

@@ -18,7 +18,9 @@ export const Hero = () => {
           <Typography variant="body1" component="p">
             Buy new wheels for yourself and move with pleasure
           </Typography>
-          <Button variant="contained">View the catalog</Button>
+          <Button variant="contained" size="large">
+            View the catalog
+          </Button>
         </StyledHeroContent>
       </StyledContainer>
     </StyledHero>

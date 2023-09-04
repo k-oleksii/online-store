@@ -133,19 +133,24 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          paddingTop: '0',
+          paddingBottom: '0',
+          fontWeight: '700',
           textTransform: 'none',
-          // borderRadius: '5px',
+          cursor: 'pointer',
         },
-        // sizeSmall: {
-        //   borderRadius: '10px',
-        // },
+        // sizeSmall: {},
         sizeLarge: {
-          borderRadius: '5px',
+          minHeight: '60px',
+          paddingRight: '67px',
+          paddingLeft: '67px',
+          borderRadius: '24px',
         },
         contained: {
+          borderRadius: '12px',
+          minHeight: '40px',
           color: '#fff',
           backgroundColor: '#212121',
-          borderRadius: '12px',
           boxShadow: 'none',
 
           '&:hover': {

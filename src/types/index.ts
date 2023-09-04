@@ -13,6 +13,7 @@ export enum EnumIcons {
   send = 'send',
   arrowLeft = 'arrowLeft',
   arrowRight = 'arrowRight',
+  arrowLong = 'arrowLong',
 }
 
 export enum EnumBreakpoints {
