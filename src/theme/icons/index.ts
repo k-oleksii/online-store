@@ -9,6 +9,7 @@ import { HeartIcon } from './HeartIcon';
 import { InIcon } from './InIcon';
 import { InstIcon } from './InstIcon';
 import { MailIcon } from './MailIcon';
+import { PassIcon } from './PassIcon';
 import { SearchIcon } from './SearchIcon';
 import { SendIcon } from './SendIcon';
 import { StarIcon } from './StarIcon';
@@ -35,4 +36,5 @@ export const icons: Icons = {
   arrowLeft: ArrowIconLeft,
   arrowRight: ArrowIconRight,
   arrowLong: ArrowIconLong,
+  pass: PassIcon,
 };

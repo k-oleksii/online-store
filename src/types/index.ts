@@ -14,6 +14,7 @@ export enum EnumIcons {
   arrowLeft = 'arrowLeft',
   arrowRight = 'arrowRight',
   arrowLong = 'arrowLong',
+  pass = 'pass',
 }
 
 export enum EnumBreakpoints {

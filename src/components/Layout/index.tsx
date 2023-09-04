@@ -4,6 +4,7 @@ import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Footer } from '../Footer';
 import { Newsletter } from '../Newsletter';
+import { Authorization } from '../forms/Authorization';
 
 export const Layout: FC = () => {
   return (
@@ -14,6 +15,7 @@ export const Layout: FC = () => {
       </main>
       <Newsletter />
       <Footer />
+      <Authorization />
     </StyledLayout>
   );
 };
