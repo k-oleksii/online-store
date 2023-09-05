@@ -1,38 +1,32 @@
-import { StyledRadioSwitch } from '@/theme/styles/ui/RadioSwitch';
+import { StyledRadioSwitch } from '@/theme/styles/ui/StyledRadioSwitch';
 import { FormControl, FormControlLabel, Radio } from '@mui/material';
-import { FC } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { ChangeEvent } from 'react';
 const types = ['Sign In', 'Sign Up'];
-export const Switch: FC = () => {
-  const form = useForm({
-    mode: 'onTouched',
-  });
+
+export const Switch = ({ onChange }: { onChange: (value: string) => void }) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+
+    if (onChange) {
+      onChange(value);
+    }
+  };
+
   return (
     <FormControl fullWidth>
-      <Controller
-        render={({ field }) => {
-          return (
-            <StyledRadioSwitch
-              defaultValue={types[0]}
-              onChange={e => field.onChange(e.target.value)}
-            >
-              {types &&
-                types.map(type => {
-                  return (
-                    <FormControlLabel
-                      key={type}
-                      value={type}
-                      control={<Radio />}
-                      label={type}
-                    />
-                  );
-                })}
-            </StyledRadioSwitch>
-          );
-        }}
-        name="type"
-        control={form.control}
-      />
+      <StyledRadioSwitch defaultValue={types[0]} onChange={handleChange}>
+        {types &&
+          types.map(type => {
+            return (
+              <FormControlLabel
+                key={type}
+                value={type}
+                control={<Radio />}
+                label={type}
+              />
+            );
+          })}
+      </StyledRadioSwitch>
     </FormControl>
   );
 };

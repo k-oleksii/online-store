@@ -1,4 +1,4 @@
-import { Dialog, DialogContent } from '@mui/material';
+import { Dialog, DialogContent, Typography } from '@mui/material';
 import { styled } from 'styled-components';
 import tw from 'twin.macro';
 
@@ -19,7 +19,15 @@ export const StyledAuthorizationContent = styled.div`
 `;
 
 export const StyledAuthorizationImg = styled.div`
-  ${tw`w-1/2	`}
+  ${tw`w-1/2`}
+`;
+
+export const StyledForgotPassText = styled(Typography)`
+  ${tw`block text-sm text-center`}
+
+  a {
+    ${tw`text-secondary-blue`}
+  }
 `;
 
 export const StyledAuthorizationForm = styled.form`
@@ -35,6 +43,11 @@ export const StyledAuthorizationForm = styled.form`
     &::before,
     &::after {
       ${tw`hidden`}
+    }
+
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 50px #f8faff inset;
+      -webkit-text-fill-color: #000;
     }
   }
 

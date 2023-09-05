@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import { headerReducer as header } from '../reducers';
+import { headerReducer as header, uiReducer as ui } from '../reducers';
 // За допомогою функції combineReducers ми створюємо rootReducer
 
 export const rootReducer = combineReducers({
   header,
-  // Передаємо наші редьюсері
+  ui,
+  // Передаємо наші редьюсери
 });

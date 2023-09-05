@@ -5,6 +5,7 @@ import { ArrowIconRight } from './ArrowIconRight';
 import { CartIcon } from './CartIcon';
 import { CloseIcon } from './CloseIcon';
 import { FbIcon } from './FbIcon';
+import { GoogleIcon } from './GoogleIcon';
 import { HeartIcon } from './HeartIcon';
 import { InIcon } from './InIcon';
 import { InstIcon } from './InstIcon';
@@ -37,4 +38,5 @@ export const icons: Icons = {
   arrowRight: ArrowIconRight,
   arrowLong: ArrowIconLong,
   pass: PassIcon,
+  google: GoogleIcon,
 };

@@ -11,7 +11,7 @@ import { EnumBreakpoints, EnumIcons } from '@/types';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 
-import { headerActions } from '@/lib/redux/actions';
+import { headerActions, uiActions } from '@/lib/redux/actions';
 import { IconButton, useMediaQuery } from '@mui/material';
 import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -56,7 +56,11 @@ export const Header: FC = () => {
 
             <IconButton>{getIcon(EnumIcons.heart)}</IconButton>
             <IconButton>{getIcon(EnumIcons.cart)}</IconButton>
-            <IconButton>{getIcon(EnumIcons.user)}</IconButton>
+            <IconButton
+              onClick={() => dispatch(uiActions.setIsSearchOpen(true))}
+            >
+              {getIcon(EnumIcons.user)}
+            </IconButton>
           </StyledOptions>
         </div>
       </StyledContainer>

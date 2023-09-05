@@ -1,14 +1,10 @@
 import { getIcon } from '@/helpers/getIcon';
-import {
-  StyledAuthorizationForm,
-  StyledForgotPassText,
-} from '@/theme/styles/components/StyledAuthorization';
+import { StyledAuthorizationForm } from '@/theme/styles/components/StyledAuthorization';
 import { StyledDivider } from '@/theme/styles/ui/StyledDivider';
 import { StyledGoogleBtn } from '@/theme/styles/ui/StyledGoogleLink';
 import { EnumIcons } from '@/types';
 import { Button } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
 import { Field } from '../../elements/Field';
 
 interface ISignIn {
@@ -16,7 +12,7 @@ interface ISignIn {
   password: string;
 }
 
-export const SignIn = () => {
+export const SignUp = () => {
   const form = useForm({
     mode: 'onTouched',
   });
@@ -30,6 +26,16 @@ export const SignIn = () => {
       onSubmit={form.handleSubmit(handleSendSubmit as any)}
     >
       <Field
+        id="name"
+        type="text"
+        label="User Name"
+        icon="user"
+        placeholder="Name"
+        error={form.formState.errors.name}
+        register={form.register('name')}
+      />
+
+      <Field
         id="email"
         type="email"
         label="E-mail"
@@ -42,24 +48,31 @@ export const SignIn = () => {
       <Field
         id="password"
         type="password"
-        label="Password"
+        label="Create a Password"
         icon="pass"
         placeholder="***********"
         error={form.formState.errors.password}
         register={form.register('password')}
       />
-      <StyledForgotPassText>
-        Forgot your password? <Link to="#">Restore</Link>
-      </StyledForgotPassText>
+      <Field
+        id="confirmPassword"
+        type="password"
+        label="Confirm Your Password"
+        icon="pass"
+        placeholder="***********"
+        error={form.formState.errors.confirm}
+        register={form.register('confirm')}
+      />
+
       <StyledDivider>
         <span>or</span>
       </StyledDivider>
       <StyledGoogleBtn>
         {getIcon(EnumIcons.google)}
-        Log In with Google
+        Sign Up with Google
       </StyledGoogleBtn>
       <Button type="submit" variant="contained">
-        Continue
+        Registration
       </Button>
     </StyledAuthorizationForm>
   );

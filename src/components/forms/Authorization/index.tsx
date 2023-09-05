@@ -10,33 +10,36 @@ import { Switch } from '../elements/Switch';
 
 import loginImg from '@/assets/login.jpg';
 import loginImgWebp from '@/assets/login.webp';
+import { uiActions } from '@/lib/redux/actions';
+import { getAuthOpen } from '@/lib/redux/selectors';
 import Image from 'react-image-webp';
+import { useDispatch, useSelector } from 'react-redux';
 import { SignIn } from './SignIn';
+import { SignUp } from './SignUp/Index';
 
 export const Authorization: FC = () => {
-  const [open, setOpen] = useState(true);
+  const dispatch = useDispatch();
+  const isAuthOpen = useSelector(getAuthOpen);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  const [typeForm, setTypeForm] = useState('Sign In');
 
   const handleClose = () => {
-    setOpen(false);
+    dispatch(uiActions.setIsSearchOpen(!isAuthOpen));
   };
 
-  const [checked, setChecked] = useState(false);
-
-  const handleChange = () => {
-    setChecked(!checked);
+  const handleChange = (value: string) => {
+    setTypeForm(value);
   };
 
   return (
-    <StyledAuthorization open={open} onClose={handleClose}>
+    <StyledAuthorization open={isAuthOpen} onClose={handleClose}>
       <StyledAuthorizationContainer>
         <StyledAuthorizationContent>
-          <Typography variant="h3">Create an account</Typography>
-          <Switch />
-          <SignIn />
+          <Typography variant="h3">
+            {typeForm === 'Sign In' ? 'Welcome Back' : 'Create an account'}
+          </Typography>
+          <Switch onChange={handleChange} />
+          {typeForm === 'Sign In' ? <SignIn /> : <SignUp />}
         </StyledAuthorizationContent>
         <StyledAuthorizationImg>
           <Image src={loginImg} webp={loginImgWebp} alt="Online" />
