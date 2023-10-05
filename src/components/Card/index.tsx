@@ -14,57 +14,64 @@ import { FC, memo } from 'react';
 import Image from 'react-image-webp';
 import { Link } from 'react-router-dom';
 
-export const Card: FC<ICardProps> = memo(
-  ({ path, title, img, imgWebp, price, oldPrice, sale, rating }) => {
-    return (
-      <StyledCard>
-        <StyledCardTop>
-          {sale && (
-            <StyledSale>
-              <Typography variant="body2" component="span">
-                Sale
-              </Typography>
-            </StyledSale>
-          )}
-          <Checkbox
-            aria-label="Checkbox demo"
-            icon={getIcon(EnumIcons.heart)}
-            checkedIcon={getIcon(EnumIcons.heart)}
-          />
-        </StyledCardTop>
-        <StyledCardImg>
-          <Link to={path}>
-            <Image src={img} webp={imgWebp} alt={title} />
-          </Link>
-        </StyledCardImg>
-        <StyledCardInfo>
-          <StyledRating
-            name={`rating-${rating}`}
-            defaultValue={rating}
-            size="small"
-            icon={getIcon(EnumIcons.star)}
-            emptyIcon={getIcon(EnumIcons.star)}
-            readOnly
-          />
-          <Link to={path} className="title">
+export const Card: FC<ICardProps> = memo(props => {
+  const { name, price, sale, id, images, rating } = props;
+  console.log(props);
+
+  return (
+    <StyledCard>
+      <StyledCardTop>
+        {sale?.newPrise && (
+          <StyledSale>
             <Typography variant="body2" component="span">
-              {title}
+              Sale
             </Typography>
-          </Link>
-          <StyledPrices>
-            <Typography variant="newPrice" component="span">
+          </StyledSale>
+        )}
+        <Checkbox
+          aria-label="Like"
+          icon={getIcon(EnumIcons.heart)}
+          checkedIcon={getIcon(EnumIcons.heart)}
+        />
+      </StyledCardTop>
+      <StyledCardImg>
+        <Link to={`${id}`}>
+          <Image src={images[0].url} webp={images[0].url} alt={name} />
+        </Link>
+      </StyledCardImg>
+      <StyledCardInfo>
+        <StyledRating
+          name={`rating-${rating}`}
+          defaultValue={rating ?? 0}
+          size="small"
+          icon={getIcon(EnumIcons.star)}
+          emptyIcon={getIcon(EnumIcons.star)}
+          readOnly
+        />
+        <Link to={`${id}`} className="title">
+          <Typography
+            variant="body2"
+            aria-label={name}
+            title={name}
+            component="span"
+            className="line-clamp-2"
+          >
+            {name}
+          </Typography>
+        </Link>
+        <StyledPrices>
+          <Typography variant="newPrice" component="span">
+            ${!sale?.newPrise ? price : sale?.newPrise}
+          </Typography>
+
+          {sale?.newPrise && (
+            <Typography variant="oldPrice" component="span">
               ${price}
             </Typography>
-
-            {oldPrice && (
-              <Typography variant="oldPrice" component="span">
-                ${oldPrice}
-              </Typography>
-            )}
-          </StyledPrices>
-          <Button variant="contained">Buy</Button>
-        </StyledCardInfo>
-      </StyledCard>
-    );
-  }
-);
+          )}
+        </StyledPrices>
+        <Button variant="contained">Buy</Button>
+      </StyledCardInfo>
+    </StyledCard>
+  );
+});

@@ -5,7 +5,6 @@ import {
 } from '@/theme/styles/components/StyledCategories';
 import { StyledContainer } from '@/theme/styles/layout/StyledWrappers';
 import { FC } from 'react';
-
 import { Category } from './Сategory';
 
 export const Categories: FC = () => {

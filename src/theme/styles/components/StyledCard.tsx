@@ -2,11 +2,11 @@ import { styled } from 'styled-components';
 import tw from 'twin.macro';
 
 export const StyledCard = styled.div`
-  ${tw`relative flex flex-col gap-y-6	py-4 bg-main-white overflow-hidden rounded-3xl`}
+  ${tw`relative flex flex-col gap-y-6 h-full py-4 bg-main-white overflow-hidden rounded-3xl`}
 `;
 
 export const StyledCardTop = styled.div`
-  ${tw`flex items-center justify-between pr-4`}
+  ${tw`flex items-center justify-between min-h-[28px] pr-4`}
 
   .MuiCheckbox-root {
     ${tw`w-6 h-6 ml-auto p-0 stroke-main-black`}
@@ -20,17 +20,21 @@ export const StyledCardTop = styled.div`
 `;
 
 export const StyledCardImg = styled.div`
-  ${tw`h-[144px]`}
+  ${tw`shrink-0	h-[144px]`}
+
+  img {
+    ${tw`object-contain	w-full h-full`}
+  }
 
   a {
-    ${tw`flex justify-center`}
+    ${tw`flex justify-center h-full px-2`}
   }
 `;
 
 export const StyledCardInfo = styled.div`
-  ${tw`flex flex-col gap-y-3 px-4`}
+  ${tw`flex flex-col gap-y-3 h-full px-4`}
 `;
 
 export const StyledPrices = styled.div`
-  ${tw`flex items-center justify-between`}
+  ${tw`flex items-center justify-between mt-auto`}
 `;

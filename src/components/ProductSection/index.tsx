@@ -4,10 +4,10 @@ import {
   StyledContainer,
   StyledContainerSlider,
 } from '@/theme/styles/layout/StyledWrappers';
+import { StyledSlider } from '@/theme/styles/ui/StyledSlider';
 import { EnumIcons, ICardProps } from '@/types';
 import { IconButton, Typography } from '@mui/material';
 import { FC } from 'react';
-import Slider from 'react-slick';
 import { Card } from '../Card';
 
 interface ISliderProps {
@@ -91,9 +91,9 @@ export const ProductSection: FC<ISliderProps> = ({ title, data }) => {
         </Typography>
       </StyledContainer>
       <StyledContainerSlider>
-        <Slider {...settings} className="product__slider">
+        <StyledSlider {...settings}>
           {data?.map((item, index) => <Card key={index} {...item} />)}
-        </Slider>
+        </StyledSlider>
       </StyledContainerSlider>
     </StyledProductSection>
   );

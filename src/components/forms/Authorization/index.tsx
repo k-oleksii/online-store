@@ -3,8 +3,8 @@ import {
   StyledAuthorizationContainer,
   StyledAuthorizationContent,
   StyledAuthorizationImg,
+  StyledAuthorizationTitle,
 } from '@/theme/styles/components/StyledAuthorization';
-import { Typography } from '@mui/material';
 import { FC, useState } from 'react';
 import { Switch } from '../elements/Switch';
 
@@ -35,9 +35,9 @@ export const Authorization: FC = () => {
     <StyledAuthorization open={isAuthOpen} onClose={handleClose}>
       <StyledAuthorizationContainer>
         <StyledAuthorizationContent>
-          <Typography variant="h3">
+          <StyledAuthorizationTitle variant="h3">
             {typeForm === 'Sign In' ? 'Welcome Back' : 'Create an account'}
-          </Typography>
+          </StyledAuthorizationTitle>
           <Switch onChange={handleChange} />
           {typeForm === 'Sign In' ? <SignIn /> : <SignUp />}
         </StyledAuthorizationContent>

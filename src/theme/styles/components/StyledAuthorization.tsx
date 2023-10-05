@@ -18,6 +18,10 @@ export const StyledAuthorizationContent = styled.div`
   ${tw`flex flex-col justify-center w-1/2	 gap-y-4 px-10 py-10`}
 `;
 
+export const StyledAuthorizationTitle = styled(Typography)`
+  ${tw`block font-bold text-center`}
+`;
+
 export const StyledAuthorizationImg = styled.div`
   ${tw`w-1/2`}
 `;

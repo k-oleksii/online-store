@@ -30,12 +30,28 @@ export interface IIconClassProps {
 }
 
 export interface ICardProps {
-  path: string;
-  title: string;
-  img: string;
-  imgWebp: string;
+  id: number;
   price: number;
-  oldPrice?: number;
-  sale?: boolean;
-  rating?: number;
+  inStock: boolean;
+  description: string;
+  characteristic: string;
+  rating: null | number;
+  name: string;
+  views: number;
+  isPreviouslyUsed: boolean;
+  images: {
+    id: number;
+    name: string;
+    url: string;
+  }[];
+  sale: {
+    id: number;
+    newPrise: number;
+    activeTill: string;
+  };
+  reviews: any[];
+  categories: {
+    id: number;
+    name: string;
+  }[];
 }
