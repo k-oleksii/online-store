@@ -10,20 +10,22 @@ export const StyledAuthorization = styled(Dialog)`
 
 export const StyledAuthorizationContainer = styled(DialogContent)`
   &.MuiDialogContent-root {
-    ${tw`flex w-[990px] p-0 bg-secondary-bg`}
+    ${tw`flex w-full lg:w-[990px] p-0 bg-secondary-bg`}
   }
 `;
 
 export const StyledAuthorizationContent = styled.div`
-  ${tw`flex flex-col justify-center w-1/2	 gap-y-4 px-10 py-10`}
+  ${tw`flex flex-col justify-center w-full lg:w-1/2	gap-y-4 px-5 lg:px-10 py-10`}
 `;
 
 export const StyledAuthorizationTitle = styled(Typography)`
-  ${tw`block font-bold text-center`}
+  &.title {
+    ${tw`block font-bold text-center`}
+  }
 `;
 
 export const StyledAuthorizationImg = styled.div`
-  ${tw`w-1/2`}
+  ${tw`hidden lg:block w-1/2`}
 `;
 
 export const StyledForgotPassText = styled(Typography)`

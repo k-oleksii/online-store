@@ -40,24 +40,21 @@ const settings = {
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
   responsive: [
-    // {
-    //   breakpoint: 1680,
-    //   settings: {
-    //     slidesToShow: 4,
-    //     slidesToScroll: 1,
-    //     infinite: true,
-    //     dots: false,
-    //   },
-    // },
-    // {
-    //   breakpoint: 1420,
-    //   settings: {
-    //     slidesToShow: 3,
-    //     slidesToScroll: 1,
-    //     initialSlide: 2,
-    //     dots: false,
-    //   },
-    // },
+    {
+      breakpoint: 1680,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        infinite: true,
+      },
+    },
+    {
+      breakpoint: 1420,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+      },
+    },
     // {
     //   breakpoint: 1280,
     //   settings: {
@@ -72,13 +69,13 @@ const settings = {
     //     slidesToScroll: 1,
     //   },
     // },
-    // {
-    //   breakpoint: 980,
-    //   settings: {
-    //     slidesToShow: 2,
-    //     slidesToScroll: 1,
-    //   },
-    // },
+    {
+      breakpoint: 980,
+      settings: {
+        autoSlidesToShow: true,
+        slidesToScroll: 1,
+      },
+    },
   ],
 };
 
@@ -86,9 +83,7 @@ export const ProductSection: FC<ISliderProps> = ({ title, data }) => {
   return (
     <StyledProductSection>
       <StyledContainer>
-        <Typography component="h2" variant="h2">
-          {title}
-        </Typography>
+        <Typography>{title}</Typography>
       </StyledContainer>
       <StyledContainerSlider>
         <StyledSlider {...settings}>

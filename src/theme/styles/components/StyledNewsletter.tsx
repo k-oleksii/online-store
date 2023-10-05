@@ -7,7 +7,7 @@ export const StyledNewsletter = styled.div`
   ${tw`pt-16 pb-14 bg-main-white`}
 
   .content {
-    ${tw`w-[542px] mx-auto`}
+    ${tw`w-[460px] mx-auto`}
 
     @media (max-width: ${EnumBreakpoints.mobile}) {
       ${tw`w-full`}
@@ -16,47 +16,55 @@ export const StyledNewsletter = styled.div`
 
   .title {
     &:not(:last-child) {
-      ${tw`block mb-8`}
+      ${tw`block mb-4`}
     }
   }
 
   .subtitle {
+    ${tw`opacity-70	`}
+
     &:not(:last-child) {
-      ${tw`block mb-6`}
+      ${tw`block mb-4`}
     }
   }
 
   form {
-    ${tw`flex`}
-  }
+    ${tw`flex gap-x-4`}
 
-  /* .MuiFormControl-root {
-    ${tw`flex-1 mr-6`}
+    .MuiFormControl-root {
+      ${tw`flex-1`}
+    }
 
     .MuiInputBase-root {
-      ${tw`px-6`}
+      ${tw`border-main-black`}
+    }
 
-      .MuiInputBase-input {
-        ${tw`h-12`}
-      }
-
-      fieldset {
-        ${tw`p-0 rounded-2xl`}
-      }
-
-      .MuiInputAdornment-root {
-        ${tw`mr-2`}
+    .MuiInputAdornment-root {
+      svg {
+        ${tw`stroke-main-black`}
       }
     }
-  } */
+
+    .MuiInputBase-input {
+      ${tw`text-sm`}
+    }
+  }
 `;
 
 export const StyledNewsletterButton = styled(IconButton)`
   &.MuiButtonBase-root {
-    ${tw`px-6 py-2 bg-secondary-gray rounded-lg	cursor-pointer`}
+    ${tw`px-7 py-2 bg-secondary-gray rounded-lg	cursor-pointer transition-all`}
+
+    &:hover {
+      ${tw`bg-main-red`}
+    }
+
+    &:active {
+      ${tw`bg-main-darkRed`}
+    }
   }
 
   svg {
-    ${tw`w-8 h-8 stroke-main-white`}
+    ${tw`w-6 h-6 stroke-main-white`}
   }
 `;

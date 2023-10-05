@@ -24,7 +24,7 @@ export const Footer = () => {
             <div className="flex flex-col h-full">
               <Logo link="/online-store/" alt="City Wheels" />
               <StyledSocials>
-                <Typography variant="h4" component="span">
+                <Typography variant="body1" component="h3">
                   Socials
                 </Typography>
                 <ul className="flex gap-x-2">
@@ -45,9 +45,9 @@ export const Footer = () => {
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <div className="flex justify-end sm:justify-start">
+            <div className="flex justify-start sm:justify-end">
               <StyledMenu>
-                <Typography variant="h4" component="span">
+                <Typography variant="body1" component="h3">
                   Sitemap
                 </Typography>
                 <ul>
@@ -68,7 +68,7 @@ export const Footer = () => {
                 </ul>
               </StyledMenu>
               <StyledMenu>
-                <Typography variant="h4" component="span">
+                <Typography variant="body1" component="h3">
                   FAQ
                 </Typography>
                 <ul>

@@ -24,12 +24,11 @@ export const Newsletter = () => {
     <StyledNewsletter>
       <StyledContainer>
         <div className="content">
-          <Typography variant="h4" component="span" className="title">
+          <Typography variant="h2" component="h3" className="title">
             Newsletter
           </Typography>
-          <Typography component="p" className="subtitle">
-            Receive updates, access to exclusive deals, and more. Please enter
-            your email.
+          <Typography component="p" variant="body2" className="subtitle">
+            Receive updates, access to exclusive deals, and more.
           </Typography>
           <form onSubmit={handleSubmit(handleSendSubmit as any)}>
             <TextField

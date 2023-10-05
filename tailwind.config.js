@@ -8,6 +8,7 @@ export default {
         white: '#fff',
         black: '#212121',
         red: '#dd2255',
+        darkRed: '#c23158',
         transparent: 'transparent',
       },
 

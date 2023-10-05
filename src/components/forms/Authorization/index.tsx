@@ -35,7 +35,7 @@ export const Authorization: FC = () => {
     <StyledAuthorization open={isAuthOpen} onClose={handleClose}>
       <StyledAuthorizationContainer>
         <StyledAuthorizationContent>
-          <StyledAuthorizationTitle variant="h3">
+          <StyledAuthorizationTitle variant="h3" className="title">
             {typeForm === 'Sign In' ? 'Welcome Back' : 'Create an account'}
           </StyledAuthorizationTitle>
           <Switch onChange={handleChange} />

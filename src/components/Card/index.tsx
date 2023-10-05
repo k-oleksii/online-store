@@ -16,7 +16,6 @@ import { Link } from 'react-router-dom';
 
 export const Card: FC<ICardProps> = memo(props => {
   const { name, price, sale, id, images, rating } = props;
-  console.log(props);
 
   return (
     <StyledCard>
