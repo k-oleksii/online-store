@@ -5,7 +5,7 @@
 ### Project:
 
 Team challenge.
-This project is an online store designed for selling products through the internet. It provides a user-friendly interface for searching and purchasing items.
+This project is an online store designed for selling products through the internet. It provides a user-friendly interface for searching and purchasing items. https://k-oleksii.github.io/online-store/
 
 ### Functionality
 
