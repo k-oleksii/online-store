@@ -12,7 +12,7 @@ export const BicyclesSection = () => {
       return;
     }
 
-    if (isLoadingProducts || responseProducts) {
+    if (isLoadingProducts || !responseProducts) {
       return <Loading />;
     }
 

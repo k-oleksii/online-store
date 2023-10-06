@@ -17,7 +17,7 @@ export const BestSellerSection = () => {
       return null;
     }
 
-    if (isLoadingBestSeller || responseBestSeller) {
+    if (isLoadingBestSeller || !responseBestSeller) {
       return (
         <StyledContainer>
           <Loading />

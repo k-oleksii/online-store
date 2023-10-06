@@ -83,7 +83,9 @@ export const ProductSection: FC<ISliderProps> = ({ title, data }) => {
   return (
     <StyledProductSection>
       <StyledContainer>
-        <Typography>{title}</Typography>
+        <Typography component="h2" variant="h2">
+          {title}
+        </Typography>
       </StyledContainer>
       <StyledContainerSlider>
         <StyledSlider {...settings}>
