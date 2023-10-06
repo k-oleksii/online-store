@@ -1,4 +1,5 @@
 import { useLoadBestSellerProduct } from '@/hooks/useLoadBestSellerProduct';
+import { StyledContainer } from '@/theme/styles/layout/StyledWrappers';
 import { useEffect, useMemo } from 'react';
 import { Loading } from '../Loading';
 import { ProductSection } from '../ProductSection';
@@ -16,8 +17,12 @@ export const BestSellerSection = () => {
       return null;
     }
 
-    if (isLoadingBestSeller) {
-      return <Loading />;
+    if (isLoadingBestSeller || responseBestSeller) {
+      return (
+        <StyledContainer>
+          <Loading />
+        </StyledContainer>
+      );
     }
 
     return (
@@ -29,7 +34,7 @@ export const BestSellerSection = () => {
   }, [responseBestSeller, errorBestSeller]);
 
   useEffect(() => {
-    if (!isLoadingBestSeller && errorBestSeller === null) {
+    if (!responseBestSeller && errorBestSeller === null) {
       loadBestSeller().catch(e => console.log('Best Seller exception', e));
     }
   }, []);

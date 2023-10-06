@@ -4,8 +4,6 @@ import { defineConfig } from 'vite';
 import macrosPlugin from 'vite-plugin-babel-macros';
 import ViteImagemin from 'vite-plugin-imagemin';
 
-
-
 // The minifiers you want to use:
 
 // https://vitejs.dev/config/
@@ -56,5 +54,8 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['@emotion/react', '@emotion/styled'],
+  },
+  build: {
+    sourcemap: false,
   },
 });

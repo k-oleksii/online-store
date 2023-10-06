@@ -12,7 +12,7 @@ export const SkateboardsSection = () => {
       return;
     }
 
-    if (isLoadingProducts) {
+    if (isLoadingProducts || !responseProducts) {
       return <Loading />;
     }
 
@@ -25,7 +25,7 @@ export const SkateboardsSection = () => {
   }, [errorProducts, responseProducts]);
 
   useEffect(() => {
-    if (!isLoadingProducts && errorProducts === null) {
+    if (!responseProducts && errorProducts === null) {
       loadProducts().catch(e => console.log('Skateboard', e));
     }
   }, []);

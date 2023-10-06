@@ -1,7 +1,7 @@
 import { useLoadProducts } from '@/hooks/useLoadProducts';
 import { useEffect, useMemo } from 'react';
-import { ProductSection } from '../ProductSection';
 import { Loading } from '../Loading';
+import { ProductSection } from '../ProductSection';
 
 export const BicyclesSection = () => {
   const { errorProducts, isLoadingProducts, loadProducts, responseProducts } =
@@ -12,7 +12,7 @@ export const BicyclesSection = () => {
       return;
     }
 
-    if (isLoadingProducts) {
+    if (isLoadingProducts || responseProducts) {
       return <Loading />;
     }
 
@@ -22,7 +22,7 @@ export const BicyclesSection = () => {
   }, [errorProducts, responseProducts]);
 
   useEffect(() => {
-    if (!isLoadingProducts && errorProducts === null) {
+    if (!responseProducts && errorProducts === null) {
       loadProducts().catch(e => console.log('Bicycles exception', e));
     }
   }, []);

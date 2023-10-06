@@ -4,13 +4,13 @@ import tw from 'twin.macro';
 
 export const StyledAuthorization = styled(Dialog)`
   .MuiPaper-root {
-    ${tw`flex max-w-full rounded-3xl`}
+    ${tw`flex max-w-full mx-4 my-4 xl:mx-8 xl:my-8 rounded-3xl`}
   }
 `;
 
 export const StyledAuthorizationContainer = styled(DialogContent)`
   &.MuiDialogContent-root {
-    ${tw`flex w-full lg:w-[990px] p-0 bg-secondary-bg`}
+    ${tw`flex w-full lg:w-[840px] 2xl:w-[990px] p-0 bg-secondary-bg`}
   }
 `;
 
