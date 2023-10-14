@@ -20,5 +20,12 @@ export const StyledSlider = styled(Slider)`
 
   .button {
     ${tw`hidden lg:inline-flex`}
+
+    &:hover,
+    &:active {
+      svg {
+        ${tw`stroke-main-red`}
+      }
+    }
   }
 `;

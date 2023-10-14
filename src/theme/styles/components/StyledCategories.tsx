@@ -22,9 +22,12 @@ export const StyledCategory = styled.article`
   ${tw`block max-h-[266px]`}
 
   a {
-    ${tw`relative block overflow-hidden rounded-3xl`}
+    ${tw`relative block overflow-hidden rounded-3xl transition-all`}
 
-    &:hover {
+    &:hover,
+    &:active {
+      ${tw`outline outline-4 outline-main-red`}
+
       img {
         ${tw`scale-105 sepia-[.4]`}
       }

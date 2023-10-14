@@ -1,15 +1,15 @@
-import { useLoadBestSellerProduct } from '@/hooks/useLoadBestSellerProduct';
+import { useLoadSaleProduct } from '@/hooks/useLoadSaleProduct';
 import { useEffect, useMemo } from 'react';
 import { Loading } from '../Loading';
 import { ProductSection } from '../ProductSection';
 
-export const BestSellerSection = () => {
+export const SaleSection = () => {
   const {
     errorBestSeller,
     responseBestSeller,
     loadBestSeller,
     isLoadingBestSeller,
-  } = useLoadBestSellerProduct();
+  } = useLoadSaleProduct();
 
   const retrieveContent = useMemo(() => {
     if (errorBestSeller) {
@@ -21,16 +21,13 @@ export const BestSellerSection = () => {
     }
 
     return (
-      <ProductSection
-        data={responseBestSeller?.data.items}
-        title={'Best seller'}
-      />
+      <ProductSection data={responseBestSeller?.data.items} title={'Sale'} />
     );
   }, [responseBestSeller, errorBestSeller]);
 
   useEffect(() => {
     if (!isLoadingBestSeller && errorBestSeller === null) {
-      loadBestSeller().catch(e => console.log('Best Seller exception', e));
+      loadBestSeller().catch(e => console.log('Sale exception', e));
     }
   }, []);
 

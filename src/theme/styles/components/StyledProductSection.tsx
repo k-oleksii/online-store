@@ -25,7 +25,7 @@ export const StyledProductSection = styled.section`
   }
 
   .slick-list {
-    ${tw`overflow-hidden`}
+    ${tw`py-1 overflow-hidden`}
   }
   .slick-track {
     ${tw`flex gap-x-5`}

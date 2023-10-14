@@ -5,7 +5,7 @@ import { EnumIcons } from '@/types';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { Hero } from '../Hero';
-import { BestSellerSection } from './BestSellerSection';
+import { SaleSection } from './SaleSection';
 import { BicyclesSection } from './BicyclesSection';
 import { Categories } from './Categories';
 import { SkateboardsSection } from './SkateboardsSection';
@@ -15,7 +15,7 @@ export const Home: FC = () => {
     <>
       <Hero />
       <Categories />
-      <BestSellerSection />
+      <SaleSection />
       <BicyclesSection />
       <SkateboardsSection />
       <StyledContainer>

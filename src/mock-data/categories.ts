@@ -28,7 +28,7 @@ export const categories = [
     path: '/online-store/scooters',
     cardPic: `${Scooters}`,
     cardPicWebp: `${ScootersWebp}`,
-    category: 'Scooter',
+    category: 'Scooters',
   },
   {
     path: '/online-store/gyroboards',

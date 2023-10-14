@@ -5,7 +5,7 @@ export default {
   theme: {
     colors: {
       main: {
-        white: '#fff',
+        white: '#ffffff',
         black: '#212121',
         red: '#dd2255',
         darkRed: '#c23158',
