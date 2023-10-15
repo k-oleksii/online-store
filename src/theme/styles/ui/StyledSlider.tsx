@@ -5,18 +5,18 @@ import { StyledCard } from '../components/StyledCard';
 
 export const StyledSlider = styled(Slider)`
   .slick-slide {
-    @media (max-width: 1000px) {
-      ${tw`!w-[220px]`}
-    }
+    // @media (max-width: 1000px) {
+
+    // }
 
     > div {
       ${tw`h-full`}
     }
   }
 
-  ${StyledCard} {
-    ${tw`min-w-[220px]`}
-  }
+  // ${StyledCard} {
+  //   ${tw`min-w-[220px]`}
+  // }
 
   .button {
     ${tw`hidden lg:inline-flex`}

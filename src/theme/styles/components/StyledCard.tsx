@@ -2,11 +2,17 @@ import { styled } from 'styled-components';
 import tw from 'twin.macro';
 
 export const StyledCard = styled.div`
-  ${tw`relative flex flex-col gap-y-6 min-h-[425px] h-full py-4 bg-main-white overflow-hidden rounded-3xl transition-all`}
+  ${tw`relative z-[1] flex flex-col gap-y-6 min-h-[425px] h-full py-4 bg-main-white overflow-hidden rounded-3xl transition-all`}
+
+  &::after {
+    ${tw`content-[''] absolute inset-x-0 inset-y-0 z-[-1] border border-4 border-main-red rounded-3xl opacity-0 transition-all`}
+  }
 
   &:hover,
   &:active {
-    ${tw`outline outline-4 outline-main-red`}
+    &::after {
+      ${tw`opacity-100`}
+    }
   }
 `;
 

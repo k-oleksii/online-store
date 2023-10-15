@@ -48,7 +48,7 @@ export const SignIn = () => {
         error={form.formState.errors.password}
         register={form.register('password')}
       />
-      <StyledForgotPassText>
+      <StyledForgotPassText variant="body2">
         Forgot your password? <Link to="#">Restore</Link>
       </StyledForgotPassText>
       <StyledDivider>

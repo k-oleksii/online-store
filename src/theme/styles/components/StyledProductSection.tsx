@@ -9,6 +9,12 @@ export const StyledProductSection = styled.section`
 
     .button {
       ${tw`absolute top-1/2 -left-10 -translate-y-2/4`}
+
+      &[data-isdisabled='true'] {
+        svg {
+          ${tw`stroke-secondary-gray`}
+        }
+      }
     }
 
     .button-next {
@@ -19,14 +25,15 @@ export const StyledProductSection = styled.section`
       ${tw`w-6 h-6 p-0`}
 
       svg {
-        ${tw`stroke-secondary-gray`}
+        ${tw`stroke-main-black`}
       }
     }
   }
 
   .slick-list {
-    ${tw`py-1 overflow-hidden`}
+    ${tw`overflow-hidden`}
   }
+
   .slick-track {
     ${tw`flex gap-x-5`}
   }

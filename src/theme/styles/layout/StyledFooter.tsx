@@ -70,6 +70,15 @@ export const StyledMenu = styled.div`
     &:not(:last-child) {
       ${tw`mb-3`}
     }
+
+    a {
+      ${tw`transition-all`}
+
+      &:hover,
+      &:active {
+        ${tw`border-b border-main-red`}
+      }
+    }
   }
 `;
 

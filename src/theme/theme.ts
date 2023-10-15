@@ -60,7 +60,7 @@ const theme = createTheme({
     },
     body2: {
       fontSize: '14px',
-      lineHeight: '19px',
+      lineHeight: '20px',
     },
     body3: {
       fontSize: '10px',

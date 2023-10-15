@@ -17,16 +17,28 @@ interface ISliderProps {
 
 interface IArrowProps {
   onClick?: () => void; // Define the type for onClick prop
+  className?: string;
 }
 
-const NextArrow: FC<IArrowProps> = ({ onClick }) => (
-  <IconButton onClick={onClick} className="button button-next">
-    {getIcon(EnumIcons.arrowRight)}
-  </IconButton>
-);
+const NextArrow: FC<IArrowProps> = ({ onClick, className }) => {
+  console.log(className);
+  return (
+    <IconButton
+      onClick={onClick}
+      className="button button-next"
+      data-isdisabled={className?.includes('slick-disabled')}
+    >
+      {getIcon(EnumIcons.arrowRight)}
+    </IconButton>
+  );
+};
 
-const PrevArrow: FC<IArrowProps> = ({ onClick }) => (
-  <IconButton onClick={onClick} className="button button-prev">
+const PrevArrow: FC<IArrowProps> = ({ onClick, className }) => (
+  <IconButton
+    onClick={onClick}
+    className="button button-prev"
+    data-isdisabled={className?.includes('slick-disabled')}
+  >
     {getIcon(EnumIcons.arrowLeft)}
   </IconButton>
 );
@@ -34,9 +46,8 @@ const PrevArrow: FC<IArrowProps> = ({ onClick }) => (
 const settings = {
   dots: false,
   infinite: true,
-  speed: 500,
   slidesToShow: 6,
-  slidesToScroll: 1,
+
   initialSlide: 0,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,

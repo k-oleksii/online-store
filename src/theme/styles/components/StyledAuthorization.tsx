@@ -15,7 +15,7 @@ export const StyledAuthorizationContainer = styled(DialogContent)`
 `;
 
 export const StyledAuthorizationContent = styled.div`
-  ${tw`flex flex-col justify-center w-full lg:w-1/2	gap-y-4 px-5 lg:px-10 py-10`}
+  ${tw`flex flex-col justify-center w-full lg:w-1/2	gap-y-4 px-5 py-10 lg:px-16 py-16`}
 `;
 
 export const StyledAuthorizationTitle = styled(Typography)`
@@ -29,7 +29,7 @@ export const StyledAuthorizationImg = styled.div`
 `;
 
 export const StyledForgotPassText = styled(Typography)`
-  ${tw`block text-sm text-center`}
+  ${tw`block text-center`}
 
   a {
     ${tw`text-secondary-blue`}
