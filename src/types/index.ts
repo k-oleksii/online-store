@@ -16,6 +16,7 @@ export enum EnumIcons {
   arrowLong = 'arrowLong',
   pass = 'pass',
   google = 'google',
+  add = 'add',
 }
 
 export enum EnumBreakpoints {
@@ -32,12 +33,14 @@ export interface IIconClassProps {
 export interface ICardProps {
   id: number;
   price: number;
+  discription: string;
   inStock: boolean;
   description: string;
   characteristic: string;
   rating: null | number;
   name: string;
   views: number;
+  count: number;
   isPreviouslyUsed: boolean;
   images: {
     id: number;
@@ -49,7 +52,11 @@ export interface ICardProps {
     newPrise: number;
     activeTill: string;
   };
-  reviews: any[];
+  reviews: {
+    text: string;
+    stars: number;
+    updatedDate: Date,
+  };
   categories: {
     id: number;
     name: string;

@@ -15,6 +15,7 @@ interface ISliderProps {
   data?: ICardProps[];
 }
 
+
 interface IArrowProps {
   onClick?: () => void; // Define the type for onClick prop
 }

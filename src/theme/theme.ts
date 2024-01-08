@@ -5,7 +5,9 @@ declare module '@mui/material/styles' {
   interface TypographyVariantsOptions {
     body3?: React.CSSProperties;
     newPrice?: React.CSSProperties;
+    newPriceRed?: React.CSSProperties;
     oldPrice?: React.CSSProperties;
+    name?: React.CSSProperties;
   }
 }
 
@@ -13,7 +15,15 @@ declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     body3: true;
     newPrice: true;
+    newPriceRed: true;
     oldPrice: true;
+    names: true;
+  }
+}
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsVariantOverrides {
+    addToCart: true;
   }
 }
 
@@ -71,6 +81,17 @@ const theme = createTheme({
       fontWeight: '900',
       lineHeight: '29px',
     },
+    name: {
+      fontSize: '16px',
+      fontWeight: '700',
+      lineHeight: '32px',
+    },
+    newPriceRed: {
+      fontSize: '24px',
+      fontWeight: '900',
+      lineHeight: '29px',
+      color: '#D25',
+    },
     oldPrice: {
       fontSize: '16px',
       fontWeight: '700',
@@ -80,6 +101,13 @@ const theme = createTheme({
     },
   },
   components: {
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          backgroundColor: '#dd2255',
+        },
+      },
+    },
     MuiFormControl: {
       styleOverrides: {
         root: {
@@ -131,6 +159,41 @@ const theme = createTheme({
     },
 
     MuiButton: {
+      variants: [
+        {
+          props: { variant: 'addToCart' },
+          style: {
+            [`@media (max-width: ${EnumBreakpoints.tabletPortrait})`]: {
+              fontSize: '24px',
+              minHeight: '50px',
+              paddingRight: '47px',
+              paddingLeft: '47px',
+            },
+            minHeight: '60px',
+            paddingRight: '67px',
+            paddingLeft: '67px',
+            borderRadius: '16px',
+            backgroundColor: '#212121',
+            color: '#FBFBFB',
+            fontSize: '26px',
+            fontWeight: '700',
+            lineHeight: '32px',
+            '&:hover': {
+              backgroundColor: '#dd2255',
+            },
+            '&:active': {
+              backgroundColor: '#c23158',
+            },
+            '&:disabled': {
+              color: '#fff',
+              backgroundColor: '#878d99',
+            },
+            '&:hover, &:focus': {
+              boxShadow: 'none',
+            },
+          },
+        },
+      ],
       styleOverrides: {
         root: {
           paddingTop: '0',
