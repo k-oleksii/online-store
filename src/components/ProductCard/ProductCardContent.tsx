@@ -93,7 +93,7 @@ export const ProductCardContent: FC<ICardProps> = props => {
               <Image src={images[0]?.url} webp={images[0]?.url} alt={name} />
             </StyledCardImg>
           </StyledCardRight>
-          <StyledCardInfo sx={{ marginBottom: '38px' }}>
+          <StyledCardInfo >
             <Typography
               variant="h1"
               aria-label={name}
@@ -192,7 +192,7 @@ export const ProductCardContent: FC<ICardProps> = props => {
                     <Tab label="Delivery" value="3" />
                   </StyledTabsList>
                 </Box>
-                <TabPanel value="1" sx={{ padding: '8px', minHeight: '265px' }}>
+                <TabPanel value="1" sx={{ padding: '8px', minHeight: '265px', maxHeight: '265px' }}>
                   {discription}
                 </TabPanel>
                 <TabPanel
@@ -202,12 +202,13 @@ export const ProductCardContent: FC<ICardProps> = props => {
                     whiteSpace: 'pre',
                     maxWidth: '500px',
                     minHeight: '265px',
+                    maxHeight: '265px',
                     overflow: 'auto',
                   }}
                 >
                   {characteristic}
                 </TabPanel>
-                <TabPanel value="3" sx={{ padding: '8px', minHeight: '265px' }}>
+                <TabPanel value="3" sx={{ padding: '8px', maxHeight: '265px' }}>
                   <List
                     sx={{
                       marginBottom: '38px',

@@ -22,7 +22,7 @@ export const StyledCardImg = styled.div`
 `;
 
 export const StyledCardInfo = styled.div`
-  ${tw`flex flex-col gap-y-2 h-full px-4`}
+  ${tw`flex flex-col gap-y-2 h-full px-4 mb-9`}
 `;
 
 export const StyledProductPrices = styled.div`

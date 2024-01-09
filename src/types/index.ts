@@ -56,7 +56,7 @@ export interface ICardProps {
     text: string;
     stars: number;
     updatedDate: Date,
-  };
+  }[];
   categories: {
     id: number;
     name: string;

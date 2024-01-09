@@ -21,7 +21,7 @@ export const ReviewCard: FC<ICardProps> = props => {
   return (
     <StyledReviewCardWrapper>
       <Typography variant="name" component="h3" mb={1}>
-        {id}
+        User #{id}
       </Typography>
       <Typography
         variant="body3"

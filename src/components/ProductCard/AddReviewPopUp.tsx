@@ -1,34 +1,24 @@
 import * as React from 'react';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
-import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { getIcon } from '@/helpers/getIcon';
 import { EnumIcons } from '@/types';
-import { Box, Rating, TextField, Typography } from '@mui/material';
-import { StarIcon } from '@/theme/icons/StarIcon';
 import {
   StyledDialog,
   StyledProductInfo,
   StyledReviewInfo,
   StyledReviewPopUpWrapper,
-  StyledReviewRating,
+  StyledRating,
   StyledTextArea,
-  StyledTextField,
-  StyledTextFieldg,
-} from '@/theme/styles/components/StyledReviewSection';
-
-// const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-//   '& .MuiDialogContent-root': {
-//     padding: theme.spacing(2),
-//   },
-//   '& .MuiDialogActions-root': {
-//     padding: theme.spacing(1),
-//   },
-// }));
+  StyledReviewRating,
+  StyledReviewPopUpTop,
+  StyledDialogActions,
+} from '@/theme/styles/components/StyledAddReviewPopUp';
 
 const labels: { [index: string]: string } = {
   0.5: 'Useless',
@@ -51,7 +41,8 @@ export const AddReviewPopUp = ({ url, name }) => {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState<number | null>(0);
   const [hover, setHover] = React.useState(-1);
-
+  // const theme = useTheme();
+  // const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -72,6 +63,7 @@ export const AddReviewPopUp = ({ url, name }) => {
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
+        // fullScreen={fullScreen}
       >
         <IconButton
           aria-label="close"
@@ -85,45 +77,66 @@ export const AddReviewPopUp = ({ url, name }) => {
         >
           <CloseIcon />
         </IconButton>
-
+        <StyledReviewPopUpTop>
+          <DialogTitle
+            sx={{ m: 0, p: 0, fontWeight: '900' }}
+            id="customized-dialog-title"
+          >
+            Leave your feedback
+          </DialogTitle>
+          <StyledReviewRating>
+            <Typography variant="body2" component="h3">
+              Rate the product
+            </Typography>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <StyledRating
+                name="hover-feedback"
+                value={value}
+                precision={0.5}
+                // icon={getIcon(EnumIcons.star)}
+                emptyIcon={<StarBorderIcon sx={{ color: '#FFD700' }} />}
+                getLabelText={getLabelText}
+                onChange={(event, newValue) => {
+                  setValue(newValue);
+                }}
+                // onChangeActive={(event, newHover) => {
+                //   setHover(newHover);
+                // }}
+              />
+              {value !== null && (
+                <Box sx={{ ml: 1, color: '#8083ff' }}>
+                  {labels[hover !== -1 ? hover : value]}
+                </Box>
+              )}
+            </Box>
+          </StyledReviewRating>
+        </StyledReviewPopUpTop>
         <DialogContent sx={{ m: 0, p: 0 }}>
           <StyledReviewPopUpWrapper>
             <StyledProductInfo>
-              <DialogTitle
-                sx={{ m: 0, p: 0, fontWeight: '900' }}
-                id="customized-dialog-title"
+              <img
+                src={url}
+                className="img"
+                alt={name}
+                width="204"
+                height="144"
+                style={{ maxHeight: '144px', objectFit: 'scale-down' }}
+              />
+              <Typography
+                variant="body2"
+                component="h3"
+                className="line-clamp-2"
               >
-                Leave your feedback
-              </DialogTitle>
-              <img src={url} className="img" alt={name} width="204" />
-              <Typography variant="body2" component="h3">
                 {name}
               </Typography>
             </StyledProductInfo>
             <StyledReviewInfo>
-              <StyledReviewRating>
-                <Typography variant="body2" component="p">
-                  Rate the product
-                </Typography>
-                <Rating
-                  name="hover-feedback"
-                  value={value}
-                  precision={0.5}
-                  getLabelText={getLabelText}
-                  onChange={(event, newValue) => {
-                    setValue(newValue);
-                  }}
-                  onChangeActive={(event, newHover) => {
-                    setHover(newHover);
-                  }}
-                />
-                {value !== null && (
-                  <Box sx={{ ml: 2 }}>
-                    {labels[hover !== -1 ? hover : value]}
-                  </Box>
-                )}
-              </StyledReviewRating>
-              <Typography variant="body2" component="p" sx={{ mt: 3, mb: 1 }}>
+              <Typography variant="body2" component="p" sx={{ mb: 1 }}>
                 Write a comment
               </Typography>
               <StyledTextArea
@@ -131,17 +144,35 @@ export const AddReviewPopUp = ({ url, name }) => {
                 minRows={8}
                 placeholder="Write here (up to 1500 characters)"
               />
+
+              <StyledDialogActions>
+                <Button
+                  variant="contained"
+                  autoFocus
+                  onClick={handleClose}
+                  sx={{
+                    backgroundColor: 'transparent',
+                    color: '#878D99',
+                    border: '1px solid black',
+                    ':hover': {
+                      border: '1px solid transparent',
+                    },
+                  }}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  variant="contained"
+                  autoFocus
+                  onClick={handleClose}
+                  sx={{ color: '#878D99' }}
+                >
+                  Send
+                </Button>
+              </StyledDialogActions>
             </StyledReviewInfo>
           </StyledReviewPopUpWrapper>
         </DialogContent>
-        <DialogActions>
-          <Button variant="contained" autoFocus onClick={handleClose}>
-            Cancel
-          </Button>
-          <Button variant="contained" autoFocus onClick={handleClose}>
-            Send
-          </Button>
-        </DialogActions>
       </StyledDialog>
     </>
   );

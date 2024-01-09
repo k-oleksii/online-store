@@ -1,5 +1,4 @@
 import { ReviewCard } from '@/components/ProductCard/ReviewCard';
-import { Dialog, TextField, TextareaAutosize } from '@mui/material';
 import Slider from 'react-slick';
 import { styled } from 'styled-components';
 import tw from 'twin.macro';
@@ -39,11 +38,6 @@ export const StyledReview = styled.div`
   }
 `;
 
-export const StyledDialog = styled(Dialog)`
-.MuiPaper-root {
-  ${tw`rounded-3xl p-10 pt-16`}
-`;
-
 export const StyledFeedbackWrapper = styled.div`
   ${tw`w-[414px] h-[254px] flex flex-col gap-y-6 p-4 justify-center items-center bg-main-white rounded-3xl`}
 `;
@@ -77,8 +71,8 @@ export const StyledReviewCard = styled(ReviewCard)`
   ${tw`place-self-start`}
 `;
 export const StyledReviewCardWrapper = styled.div`
-  ${tw``}
 `;
+
 export const StyledContainerReviewSlider = styled.div`
   // ${tw`w-full lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto`}
 `;
@@ -101,29 +95,4 @@ export const StyledReviewSlider = styled(Slider)`
   // .button {
   //   ${tw`hidden lg:inline-flex`}
   // }
-`;
-
-export const StyledReviewPopUpWrapper = styled.div`
-  ${tw`grid grid-cols-2 gap-x-5`}
-`;
-
-export const StyledProductInfo = styled.div``;
-
-export const StyledReviewInfo = styled.div``;
-
-export const StyledReviewRating = styled.div`
-  ${tw`grid grid-cols-2 content-center items-center`}
-`;
-
-export const StyledTextArea = styled(TextareaAutosize)`
-  width: 250px;
-  padding: 16px;
-  border-radius: 16px;
-  border: 1px solid #8083ff;
-  &:hover {
-    border: 1px solid #D25;
-  }
-  &:focus{
-    border: 1px solid yellow;
-  }
 `;
