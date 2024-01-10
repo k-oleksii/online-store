@@ -8,7 +8,7 @@ export const StyledReviewSection = styled.section`
 `;
 
 export const StyledReview = styled.div`
-  ${tw`flex gap-x-5`}
+  ${tw`flex gap-x-10`}
 
   .slick-slider {
     ${tw`relative`}
@@ -17,18 +17,18 @@ export const StyledReview = styled.div`
       ${tw`absolute top-1/2 -left-3 -translate-y-2/4`}
     }
 
-    // .button-next {
-    //   ${tw`absolute -right-10 left-auto`}
-    // }
+    .button-next {
+      ${tw`absolute -right-10 left-auto`}
+    }
 
-  //   .MuiIconButton-root {
-  //     ${tw`w-6 h-6 p-0`}
+    .MuiIconButton-root {
+      ${tw`w-6 h-6 p-0`}
 
-  //     svg {
-  //       ${tw`stroke-secondary-gray`}
-  //     }
-  //   }
-  // }
+      svg {
+        ${tw`stroke-secondary-gray`}
+      }
+    }
+  }
 
   .slick-list {
     ${tw`overflow-hidden`}

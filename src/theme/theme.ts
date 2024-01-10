@@ -164,10 +164,11 @@ const theme = createTheme({
           props: { variant: 'addToCart' },
           style: {
             [`@media (max-width: ${EnumBreakpoints.tabletPortrait})`]: {
-              fontSize: '24px',
+              fontSize: '23px',
               minHeight: '50px',
-              paddingRight: '47px',
-              paddingLeft: '47px',
+              paddingRight: '22px',
+              paddingLeft: '22px',
+              lineHeight: '26px',
             },
             minHeight: '60px',
             paddingRight: '67px',

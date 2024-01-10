@@ -6,7 +6,7 @@ export const StyledTabsList = styled(TabList)`
     text-transform: capitalize;
   }
   .css-1pyy021-MuiTabs-flexContainer {
-    gap: 36px;
+    gap: 56px;
   }
   .css-cat43h-MuiButtonBase-root-MuiTab-root.Mui-selected {
     color: #212121;

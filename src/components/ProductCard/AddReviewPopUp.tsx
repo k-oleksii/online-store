@@ -19,6 +19,7 @@ import {
   StyledReviewPopUpTop,
   StyledDialogActions,
 } from '@/theme/styles/components/StyledAddReviewPopUp';
+import Image from 'react-image-webp';
 
 const labels: { [index: string]: string } = {
   0.5: 'Useless',
@@ -41,6 +42,13 @@ export const AddReviewPopUp = ({ url, name }) => {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState<number | null>(0);
   const [hover, setHover] = React.useState(-1);
+  const [text, setText] = React.useState('');
+
+  const handleTextChange = event => {
+    setText(event.target.value);
+  };
+
+  const isTextEntered = text.trim() !== '';
   // const theme = useTheme();
   // const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const handleClickOpen = () => {
@@ -119,14 +127,15 @@ export const AddReviewPopUp = ({ url, name }) => {
         <DialogContent sx={{ m: 0, p: 0 }}>
           <StyledReviewPopUpWrapper>
             <StyledProductInfo>
-              <img
+              <Image
                 src={url}
-                className="img"
+                webp={url}
                 alt={name}
                 width="204"
                 height="144"
                 style={{ maxHeight: '144px', objectFit: 'scale-down' }}
               />
+
               <Typography
                 variant="body2"
                 component="h3"
@@ -140,6 +149,8 @@ export const AddReviewPopUp = ({ url, name }) => {
                 Write a comment
               </Typography>
               <StyledTextArea
+                value={text}
+                onChange={handleTextChange}
                 aria-label="empty textarea"
                 minRows={8}
                 placeholder="Write here (up to 1500 characters)"
@@ -156,19 +167,26 @@ export const AddReviewPopUp = ({ url, name }) => {
                     border: '1px solid black',
                     ':hover': {
                       border: '1px solid transparent',
+                      color: 'white',
                     },
                   }}
                 >
                   Cancel
                 </Button>
-                <Button
-                  variant="contained"
-                  autoFocus
-                  onClick={handleClose}
-                  sx={{ color: '#878D99' }}
-                >
-                  Send
-                </Button>
+                {isTextEntered && value > 0 ? (
+                  <Button variant="contained" autoFocus onClick={handleClose}>
+                    Send
+                  </Button>
+                ) : (
+                  <Button
+                    disabled
+                    variant="contained"
+                    autoFocus
+                    onClick={handleClose}
+                  >
+                    Send
+                  </Button>
+                )}
               </StyledDialogActions>
             </StyledReviewInfo>
           </StyledReviewPopUpWrapper>
