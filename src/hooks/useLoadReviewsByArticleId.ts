@@ -1,9 +1,9 @@
 import useAxios from 'axios-hooks';
 
-export const useLoadUserInfo = (
+export const useLoadReviewsByArticleId = (
   id: number
 ) => {
-  const url = `https://www.citywheels.website/api/users/${id}`;
+  const url = `https://www.citywheels.website/api/reviews/article/${id}`;
 
   const [{ data, loading, error }, execute] = useAxios(
     {
@@ -18,9 +18,9 @@ export const useLoadUserInfo = (
   );
 
   return {
-    loadUserInfo: execute,
-    errorUserInfo: error,
-    isLoadingUserInfo: loading,
-    responseUserInfo: data,
+    loadReviewsByArticleId: execute,
+    errorReviewsByArticleId: error,
+    isLoadingReviewsByArticleId: loading,
+    responseReviewsByArticleId: data,
   };
 };

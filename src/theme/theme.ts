@@ -81,11 +81,6 @@ const theme = createTheme({
       fontWeight: '900',
       lineHeight: '29px',
     },
-    name: {
-      fontSize: '16px',
-      fontWeight: '700',
-      lineHeight: '32px',
-    },
     newPriceRed: {
       fontSize: '24px',
       fontWeight: '900',

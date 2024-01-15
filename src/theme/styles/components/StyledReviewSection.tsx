@@ -1,4 +1,4 @@
-import { ReviewCard } from '@/components/ProductCard/ReviewCard';
+import { ReviewCard } from '@/components/Product/ReviewCard';
 import Slider from 'react-slick';
 import { styled } from 'styled-components';
 import tw from 'twin.macro';
@@ -8,42 +8,11 @@ export const StyledReviewSection = styled.section`
 `;
 
 export const StyledReview = styled.div`
-  ${tw`flex gap-x-10`}
-
-  .slick-slider {
-    ${tw`relative`}
-
-    .button {
-      ${tw`absolute top-1/2 -left-3 -translate-y-2/4`}
-    }
-
-    .button-next {
-      ${tw`absolute -right-10 left-auto`}
-    }
-
-    .MuiIconButton-root {
-      ${tw`w-6 h-6 p-0`}
-
-      svg {
-        ${tw`stroke-secondary-gray`}
-      }
-    }
-  }
-
-  .slick-list {
-    ${tw`overflow-hidden`}
-  }
-  .slick-track {
-    ${tw`flex gap-x-5`}
-  }
+  ${tw`h-[254px] grid grid-cols-[30%, auto] gap-x-14`}
 `;
 
 export const StyledFeedbackWrapper = styled.div`
-  ${tw`w-[414px] h-[254px] flex flex-col gap-y-6 p-4 justify-center items-center bg-main-white rounded-3xl`}
-`;
-
-export const StyledReviewsWrapper = styled.div`
-  ${tw`w-full grid p-4 bg-main-white rounded-3xl`}
+  ${tw` flex flex-col gap-y-6 p-4 justify-center items-center bg-main-white rounded-3xl`}
 `;
 
 export const StyledAddButton = styled.div`
@@ -64,35 +33,77 @@ export const StyledAddButton = styled.div`
   }
 `;
 
+export const StyledReviewsWrapper = styled.div`
+  // ${tw`w-full grid`}
+`;
 export const StyledNoReviews = styled.div`
-  ${tw`place-self-center`}
+  ${tw`h-full flex justify-center items-center bg-main-white rounded-3xl p-4`}
 `;
+   
 export const StyledReviewCard = styled(ReviewCard)`
-  ${tw`place-self-start`}
+  ${tw`p-4`}
 `;
+
 export const StyledReviewCardWrapper = styled.div`
+  ${tw`min-h-[254px] bg-main-white rounded-3xl p-4`}
 `;
 
 export const StyledContainerReviewSlider = styled.div`
-  // ${tw`w-full lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto`}
-`;
+${tw`m-auto`}
+
+  .slick-slider {
+    ${tw`relative max-w-[250px] sm:max-w-[300px] md:max-w-[450px] lg:max-w-[600px] xl:max-w-[700px] 2xl:max-w-[940px]`}
+    
+    .button {
+      ${tw`absolute top-1/2 -left-10 -translate-y-2/4`}
+    }
+
+    .button-next {
+      ${tw`absolute -right-10 left-auto`}
+    }
+
+    .MuiIconButton-root {
+      ${tw`w-6 h-6 p-0`}
+
+      svg {
+        ${tw`stroke-secondary-gray`}
+      }
+
+      &:hover {
+      
+      svg {
+        ${tw`stroke-main-red`}
+      }
+    }
+  }
+
+  .slick-list {
+    ${tw`overflow-hidden`}
+  }
+  .slick-track {
+    ${tw`flex gap-x-5`}
+  }
+  `;
 
 export const StyledReviewSlider = styled(Slider)`
-  // .slick-slide {
-  //   @media (max-width: 1000px) {
-  //     ${tw`!w-[220px]`}
-  //   }
+  .slick-slide {
+    
+      ${tw`!max-w-[490px] `}
+    }
+    // @media (max-width: 1000px) {
+    //   ${tw`!w-[390px]`}
+    // }
 
-  //   > div {
-  //     ${tw`h-full`}
-  //   }
-  // }
+    > div {
+      ${tw`h-full`}
+    }
+  }
 
-  // ${StyledReviewCard} {
-  //   ${tw`min-w-[220px]`}
-  // }
+  ${StyledReviewCard} {
+    ${tw`min-w-[460px]`}
+  }
 
-  // .button {
-  //   ${tw`hidden lg:inline-flex`}
-  // }
+  .button {
+    ${tw`hidden lg:inline-flex`}
+  }
 `;

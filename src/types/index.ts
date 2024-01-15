@@ -55,10 +55,27 @@ export interface ICardProps {
   reviews: {
     text: string;
     stars: number;
-    updatedDate: Date,
+    date: Date;
   }[];
   categories: {
     id: number;
     name: string;
   }[];
+}
+
+export interface IProductProps {
+  id: number;
+}
+
+export interface IReviewProps {
+  author: { name: string };
+  text: string;
+  stars: number;
+  updatedAt: Date;
+}
+
+export interface IReviewPopUpProps {
+  name: string;
+  url: string;
+  
 }

@@ -1,16 +1,14 @@
 import { useLoadProduct } from '@/hooks/useLoadProduct';
 import { useEffect, useMemo } from 'react';
-import { Loading } from '../Loading';
+import { Loading } from '../../Loading';
 import { FC } from 'react';
 import { ProductCardContent } from './ProductCardContent';
+import { IProductProps } from '@/types';
 
-interface IProductProps {
-  id: number;
-}
 export const ProductCard: FC<IProductProps> = ({ id }) => {
   const { errorProduct, isLoadingProduct, loadProduct, responseProduct } =
     useLoadProduct(id);
-
+ 
   const retrieveContent = useMemo(() => {
     if (errorProduct) {
       return;
@@ -31,4 +29,3 @@ export const ProductCard: FC<IProductProps> = ({ id }) => {
 
   return <>{retrieveContent}</>;
 };
-

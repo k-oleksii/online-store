@@ -1,13 +1,15 @@
-import * as React from 'react';
+import Image from 'react-image-webp';
+import { FC, useState } from 'react';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import Button from '@mui/material/Button';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+
 import { getIcon } from '@/helpers/getIcon';
-import { EnumIcons } from '@/types';
+import { EnumIcons, IReviewPopUpProps} from '@/types';
 import {
   StyledDialog,
   StyledProductInfo,
@@ -19,7 +21,6 @@ import {
   StyledReviewPopUpTop,
   StyledDialogActions,
 } from '@/theme/styles/components/StyledAddReviewPopUp';
-import Image from 'react-image-webp';
 
 const labels: { [index: string]: string } = {
   0.5: 'Useless',
@@ -38,11 +39,11 @@ function getLabelText(value: number) {
   return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
 }
 
-export const AddReviewPopUp = ({ url, name }) => {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState<number | null>(0);
-  const [hover, setHover] = React.useState(-1);
-  const [text, setText] = React.useState('');
+export const AddReviewPopUp: FC<IReviewPopUpProps> = ({ url, name }) => {
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState<number | null>(0);
+  const [hover, setHover] = useState(-1);
+  const [text, setText] = useState('');
 
   const handleTextChange = event => {
     setText(event.target.value);

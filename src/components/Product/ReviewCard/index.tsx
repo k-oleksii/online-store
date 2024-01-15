@@ -1,16 +1,16 @@
-import { getIcon } from '@/helpers/getIcon';
-import { useLoadUserInfo } from '@/hooks/useLoadUserInfo';
-import { StyledReviewCardWrapper } from '@/theme/styles/components/StyledReviewSection';
-import { StyledRating } from '@/theme/styles/ui/StyledRating';
-import { EnumIcons, ICardProps } from '@/types';
 import { Typography } from '@mui/material';
 import { FC, memo } from 'react';
 
-export const ReviewCard: FC<ICardProps> = props => {
-  const { id, text, stars, date } = props;
-  const {responseUserInfo} = useLoadUserInfo(id);
-  console.log(responseUserInfo);
-  const dateFormatted = new Date(date);
+import { getIcon } from '@/helpers/getIcon';
+import { StyledReviewCardWrapper } from '@/theme/styles/components/StyledReviewSection';
+import { StyledRating } from '@/theme/styles/ui/StyledRating';
+import { EnumIcons, IReviewProps } from '@/types';
+
+export const ReviewCard: FC<IReviewProps> = props => {
+  const { author, text, stars, updatedAt } = props;
+  const { name } = author;
+
+  const dateFormatted = new Date(updatedAt);
   const year = dateFormatted.getFullYear();
   const month = dateFormatted.getMonth() + 1;
   const formattedMonth = month < 10 ? '0' + month : month;
@@ -20,8 +20,13 @@ export const ReviewCard: FC<ICardProps> = props => {
 
   return (
     <StyledReviewCardWrapper>
-      <Typography variant="name" component="h3" mb={1}>
-        User #{id}
+      <Typography
+        variant="button"
+        component="h3"
+        mb={1}
+        sx={{ textTransform: 'none' }}
+      >
+        {name}
       </Typography>
       <Typography
         variant="body3"

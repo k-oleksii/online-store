@@ -10,9 +10,8 @@ import { StyledContainer } from '@/theme/styles/layout/StyledWrappers';
 import { EnumBreakpoints, EnumIcons } from '@/types';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-
 import { headerActions, uiActions } from '@/lib/redux/actions';
-import { Badge, IconButton, useMediaQuery } from '@mui/material';
+import { IconButton, useMediaQuery } from '@mui/material';
 import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { HeaderSearch } from './HeaderSearch';
@@ -55,9 +54,6 @@ export const Header: FC = () => {
             )}
 
             <IconButton>{getIcon(EnumIcons.heart)}</IconButton>
-            <Badge badgeContent={4} color="primary">
-              <IconButton>{getIcon(EnumIcons.cart)}</IconButton>
-            </Badge>
             <IconButton
               onClick={() => dispatch(uiActions.setIsSearchOpen(true))}
             >
