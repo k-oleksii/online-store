@@ -33,11 +33,11 @@ export const CartItem: FC<ICartItemProps> = ({
   const dispatch = useDispatch();
   const item = { id, name, url, price, sale };
 
-  const changeQuantity = (item, quantity) => {
+  const changeQuantity = (item: any, quantity: any) => {
     dispatch(addItemToCart({ ...item, quantity }));
   };
 
-  const removeItem = id => {
+  const removeItem = (id: any) => {
     dispatch(removeItemFromCart(id));
   };
 
@@ -53,7 +53,7 @@ export const CartItem: FC<ICartItemProps> = ({
             component="h2"
             className="line-clamp-1"
             mb={1}
-            sx={{ width: '85%'}}
+            sx={{ width: '85%' }}
           >
             {name}
           </Typography>
@@ -136,4 +136,3 @@ export const CartItem: FC<ICartItemProps> = ({
     </>
   );
 };
-

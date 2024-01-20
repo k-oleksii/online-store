@@ -45,7 +45,7 @@ export const AddReviewPopUp: FC<IReviewPopUpProps> = ({ url, name }) => {
   const [hover, setHover] = useState(-1);
   const [text, setText] = useState('');
 
-  const handleTextChange = event => {
+  const handleTextChange = (event: any) => {
     setText(event.target.value);
   };
 
@@ -110,7 +110,7 @@ export const AddReviewPopUp: FC<IReviewPopUpProps> = ({ url, name }) => {
                 // icon={getIcon(EnumIcons.star)}
                 emptyIcon={<StarBorderIcon sx={{ color: '#FFD700' }} />}
                 getLabelText={getLabelText}
-                onChange={(event, newValue) => {
+                onChange={(_, newValue) => {
                   setValue(newValue);
                 }}
                 // onChangeActive={(event, newHover) => {
