@@ -48,17 +48,17 @@ const settings = {
 };
 
 export const ReviewsSlider: FC<ISliderReviewProps> = props => {
-  const { items } = props;
+  const items: any[] = props.items;
   return (
     <StyledReviewsWrapper>
-      {!items.length && (
+      {items?.length=== 0 && (
         <StyledNoReviews>
           <Typography>
             There are no reviews for this product on this site yet.
           </Typography>
         </StyledNoReviews>
       )}
-      {items.length === 1 && (
+      {items?.length === 1 && (
         <StyledReviewCard
           stars={items[0].stars}
           author={items[0].author}

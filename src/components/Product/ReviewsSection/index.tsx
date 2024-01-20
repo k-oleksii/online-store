@@ -26,7 +26,7 @@ export const ReviewsSection: FC<IReviewPopUpProps> = ({ url, name, id }) => {
               Leave your feedback about the product
             </Typography>
             <StyledAddButton>
-              <AddReviewPopUp url={url} name={name} />
+              <AddReviewPopUp url={url} name={name} id={id} />
             </StyledAddButton>
           </StyledFeedbackWrapper>
           <Reviews id={id} />

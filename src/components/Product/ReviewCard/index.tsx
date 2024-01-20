@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import { FC, memo } from 'react';
+import { FC } from 'react';
 
 import { getIcon } from '@/helpers/getIcon';
 import { StyledReviewCardWrapper } from '@/theme/styles/components/StyledReviewSection';
