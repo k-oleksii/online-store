@@ -7,19 +7,23 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // import { theme } from 'twin.macro';
 import { App } from './App.js';
 import './index.css';
-import { store } from './lib/redux/init/store.js';
+// import { store } from './lib/redux/init/store.js';
 import theme from './theme/theme';
+import { otherStore, persistor } from './lib/otherRedux/otherStore.js';
+import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   // Наш store прокидаємо у Provider
   <React.StrictMode>
     <StyledGlobal />
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <Router>
-          <App />
-        </Router>
-      </ThemeProvider>
-    </Provider>
+    <PersistGate loading={null} persistor={persistor}>
+      <Provider store={otherStore}>
+        <ThemeProvider theme={theme}>
+          <Router>
+            <App />
+          </Router>
+        </ThemeProvider>
+      </Provider>
+    </PersistGate>
   </React.StrictMode>
 );

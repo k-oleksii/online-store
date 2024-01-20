@@ -10,6 +10,11 @@ import { Button } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { Field } from '../../elements/Field';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '@/lib/otherRedux/thunks/auth';
+import { setAuth } from '@/lib/otherRedux/slice/ui';
+import { LoadingButton } from '@mui/lab';
+import { selectIsLoading } from '@/lib/otherRedux/selectors';
 
 interface ISignIn {
   email: string;
@@ -17,12 +22,19 @@ interface ISignIn {
 }
 
 export const SignIn = () => {
+  const loading= useSelector(selectIsLoading)
   const form = useForm({
     mode: 'onTouched',
   });
+  const dispatch = useDispatch();
 
-  const handleSendSubmit = (data: ISignIn) => {
-    console.log(data);
+  const handleSendSubmit = async (data: ISignIn) => {
+    try {
+      await dispatch(loginUser(data));
+      dispatch(setAuth(false));
+    } catch (e) {
+      return e.message;
+    }
   };
 
   return (
@@ -58,9 +70,9 @@ export const SignIn = () => {
         {getIcon(EnumIcons.google)}
         Log In with Google
       </StyledGoogleBtn>
-      <Button type="submit" variant="contained">
-        Continue
-      </Button>
+      <LoadingButton type="submit" loading={loading} variant="contained">
+        <span>Continue</span>
+      </LoadingButton>
     </StyledAuthorizationForm>
   );
 };

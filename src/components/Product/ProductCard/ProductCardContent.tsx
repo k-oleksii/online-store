@@ -6,7 +6,6 @@ import {
   Checkbox,
   Typography,
   Tab,
-  Button,
   ListItem,
   ListItemText,
 } from '@mui/material';
@@ -39,6 +38,9 @@ import { StyledAllLink } from '@/theme/styles/ui/StyledAllLink';
 import { ReviewsSection } from '../ReviewsSection';
 import { ProductSectionByCategory } from '../ProductSectionWithCategory';
 import { ImageSlider } from './ImageSlider';
+import { useDispatch, useSelector } from 'react-redux';
+import { Cart } from '@/components/Cart';
+import { addToFavoritesThunk } from '@/lib/otherRedux/thunks/user';
 
 export const ProductCardContent: FC<ICardProps> = props => {
   const {
@@ -54,6 +56,7 @@ export const ProductCardContent: FC<ICardProps> = props => {
     count,
   } = props;
   const [value, setValue] = useState('1');
+  const dispatch = useDispatch();
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
@@ -63,6 +66,14 @@ export const ProductCardContent: FC<ICardProps> = props => {
       top: elementRef.current.offsetTop,
       behavior: 'smooth',
     });
+  };
+  const inFavorites = 'true';
+  const handleFavoritesSubmit = async id => {
+    try {
+      await dispatch(addToFavoritesThunk(id));
+    } catch (e) {
+      return e.message;
+    }
   };
   return (
     <StyledProductCardSection>
@@ -169,11 +180,25 @@ export const ProductCardContent: FC<ICardProps> = props => {
               )}
             </StyledProductPrices>
             <StyledButtonHeartGroup>
-              <Button variant="addToCart">Add to cart</Button>
+              <Cart
+                id={id}
+                name={name}
+                quantity={1}
+                url={images[0].url}
+                price={price}
+                sale={sale?.newPrise}
+              />
+              {/* <Button
+                variant="addToCart"
+                onClick={() => dispatch(addItemToCart(infoForCard))}
+              >
+                Add to cart
+              </Button> */}
               <Checkbox
                 aria-label="Like"
                 icon={getIcon(EnumIcons.heart)}
                 checkedIcon={getIcon(EnumIcons.heart)}
+                onChange={handleFavoritesSubmit}
               />
             </StyledButtonHeartGroup>
             <Box>

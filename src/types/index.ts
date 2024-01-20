@@ -17,6 +17,7 @@ export enum EnumIcons {
   pass = 'pass',
   google = 'google',
   add = 'add',
+  delete = 'delete',
 }
 
 export enum EnumBreakpoints {
@@ -77,5 +78,13 @@ export interface IReviewProps {
 export interface IReviewPopUpProps {
   name: string;
   url: string;
-  
+}
+
+export interface ICartItemProps {
+  id: number;
+  name: string;
+  url: string;
+  quantity: number;
+  price: number;
+  sale: number;
 }

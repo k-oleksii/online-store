@@ -105,7 +105,7 @@ export const StyledButtonHeartGroup = styled.div`
   }
 
   .MuiCheckbox-root:hover {
-    ${tw`border-main-red stroke-main-red  `}
+    ${tw`border-main-red stroke-main-red`}
   }
 
   .Mui-checked {

@@ -16,15 +16,17 @@ import Image from 'react-image-webp';
 import { useDispatch, useSelector } from 'react-redux';
 import { SignIn } from './SignIn';
 import { SignUp } from './SignUp/Index';
+import { selectAuthOpen } from '@/lib/otherRedux/selectors';
+import { setSearch } from '@/lib/otherRedux/slice/header';
 
 export const Authorization: FC = () => {
   const dispatch = useDispatch();
-  const isAuthOpen = useSelector(getAuthOpen);
+  const isAuthOpen = useSelector(selectAuthOpen);
 
   const [typeForm, setTypeForm] = useState('Sign In');
 
   const handleClose = () => {
-    dispatch(uiActions.setIsSearchOpen(!isAuthOpen));
+    dispatch(setSearch(!isAuthOpen));
   };
 
   const handleChange = (value: string) => {
