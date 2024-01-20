@@ -38,9 +38,9 @@ import { StyledAllLink } from '@/theme/styles/ui/StyledAllLink';
 import { ReviewsSection } from '../ReviewsSection';
 import { ProductSectionByCategory } from '../ProductSectionWithCategory';
 import { ImageSlider } from './ImageSlider';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { Cart } from '@/components/Cart';
-import { addToFavoritesThunk } from '@/lib/otherRedux/thunks/user';
+// import { addToFavoritesThunk } from '@/lib/otherRedux/thunks/user';
 
 export const ProductCardContent: FC<ICardProps> = props => {
   const {
@@ -56,7 +56,7 @@ export const ProductCardContent: FC<ICardProps> = props => {
     count,
   } = props;
   const [value, setValue] = useState('1');
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
