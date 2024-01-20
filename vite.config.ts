@@ -40,7 +40,7 @@ export default defineConfig({
     macrosPlugin(),
   ],
 
-  base: '/',
+  base: '/online-store/',
   server: {
     port: 3000,
   },
