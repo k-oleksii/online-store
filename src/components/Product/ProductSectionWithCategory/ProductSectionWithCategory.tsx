@@ -8,10 +8,10 @@ import { StyledSlider } from '@/theme/styles/ui/StyledSlider';
 import { EnumIcons, ICardProps } from '@/types';
 import { IconButton, Typography } from '@mui/material';
 import { FC } from 'react';
-import { Card } from '../Card';
+import { Card } from '../../Card';
 
 interface ISliderProps {
-  title?: string;
+  category?: string;
   data?: ICardProps[];
 }
 
@@ -80,12 +80,12 @@ const settings = {
   ],
 };
 
-export const ProductSection: FC<ISliderProps> = ({ title, data }) => {
+export const ProductSectionWithCategory: FC<ISliderProps> = ({ category, data }) => {
   return (
     <StyledProductSection>
       <StyledContainer>
         <Typography component="h2" variant="h2">
-          {title}
+          Other {category}s
         </Typography>
       </StyledContainer>
       <StyledContainerSlider>

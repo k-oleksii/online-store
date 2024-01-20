@@ -16,6 +16,7 @@ import { SendIcon } from './SendIcon';
 import { StarIcon } from './StarIcon';
 import { UserIcon } from './UserIcon';
 import { YtIcon } from './YtIcon';
+import { AddIcon } from './AddIcon';
 
 export interface Icons {
   [key: string]: FC<{ iconClass: string }>;
@@ -39,4 +40,5 @@ export const icons: Icons = {
   arrowLong: ArrowIconLong,
   pass: PassIcon,
   google: GoogleIcon,
+  add: AddIcon,
 };

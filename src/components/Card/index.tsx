@@ -34,7 +34,7 @@ export const Card: FC<ICardProps> = memo(props => {
         />
       </StyledCardTop>
       <StyledCardImg>
-        <Link to={`${id}`}>
+        <Link to={`/online-store/${id}`}>
           <Image src={images[0].url} webp={images[0].url} alt={name} />
         </Link>
       </StyledCardImg>
@@ -47,7 +47,7 @@ export const Card: FC<ICardProps> = memo(props => {
           emptyIcon={getIcon(EnumIcons.star)}
           readOnly
         />
-        <Link to={`${id}`} className="title">
+        <Link to={`/online-store/${id}`} className="title">
           <Typography
             variant="body2"
             aria-label={name}
