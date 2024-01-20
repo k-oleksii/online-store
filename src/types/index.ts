@@ -76,6 +76,7 @@ export interface IReviewProps {
 }
 
 export interface IReviewPopUpProps {
+  id:number;
   name: string;
   url: string;
 }

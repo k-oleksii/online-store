@@ -4,10 +4,14 @@ import Image from 'react-image-webp';
 
 import { getIcon } from '@/helpers/getIcon';
 import { EnumIcons } from '@/types';
-import { StyledCardImg, StyledContainerImagesSlider, StyledImagesSlider } from '@/theme/styles/components/StyledProductCard';
+import {
+  StyledCardImg,
+  StyledContainerImagesSlider,
+  StyledImagesSlider,
+} from '@/theme/styles/components/StyledProductCard';
 
 interface ISliderImagesProps {
-  images: [{ url: 'string'; name: 'string' }];
+  images: { url: string; name: string }[];
 }
 
 interface IArrowProps {

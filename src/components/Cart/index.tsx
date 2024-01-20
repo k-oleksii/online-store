@@ -43,10 +43,10 @@ export const Cart: FC<ICartItemProps> = ({ id, name, url, price, sale, quantity,
   };
 
   const cart = useSelector(selectCart);
-  const priceTotal = cart?.reduce((acc, item) => {
+  const priceTotal = cart?.reduce((acc: any, item: any) => {
     return acc + item.quantity * item.price;
   }, 0);
-  const saleTotal = cart?.reduce((acc, item) => {
+  const saleTotal = cart?.reduce((acc: any, item: any) => {
     return acc + item.quantity * (isNaN(item.sale) ? 0 : item.sale);
   }, 0);
   const saleTotalChecked = isNaN(saleTotal) ? 0 : saleTotal;
@@ -90,7 +90,7 @@ export const Cart: FC<ICartItemProps> = ({ id, name, url, price, sale, quantity,
               </StyledNoCartItemsWrapper>
             ) : (
               <>
-                {cart?.map(item => <CartItem key={item.id} {...item} />)}
+                {cart?.map((item: any) => <CartItem key={item.id} {...item} />)}
                 <StyledCartBottom>
                   <StyledTotals>
                     <StyledCol1></StyledCol1>

@@ -1,5 +1,3 @@
-import { headerActions } from '@/lib/redux/actions';
-import { getSearchOpen } from '@/lib/redux/selectors';
 import { StyledSearchDialog } from '@/theme/styles/layout/StyledHeader';
 import { Slide } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
