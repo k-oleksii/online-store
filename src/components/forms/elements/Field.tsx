@@ -10,6 +10,18 @@ import {
 import { FC } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
+interface ISignInTypes {
+  id?: string;
+  label?: string;
+  icon?: string;
+  placeholder?: string;
+  type?: string;
+  register: UseFormRegisterReturn;
+  error?: {
+    message?: string;
+  };
+}
+
 export const Field: FC<ISignInTypes> = ({
   id,
   label,
@@ -41,14 +53,3 @@ export const Field: FC<ISignInTypes> = ({
   );
 };
 
-interface ISignInTypes {
-  id?: string;
-  label?: string;
-  icon?: string;
-  placeholder?: string;
-  type?: string;
-  register: UseFormRegisterReturn;
-  error?: {
-    message?: string;
-  };
-}

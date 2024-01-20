@@ -1,5 +1,5 @@
 import Image from 'react-image-webp';
-import { FC, useState } from 'react';
+import {ChangeEvent, FC, useState} from 'react';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import Button from '@mui/material/Button';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -42,10 +42,11 @@ function getLabelText(value: number) {
 export const AddReviewPopUp: FC<IReviewPopUpProps> = ({ url, name }) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState<number | null>(0);
-  const [hover, setHover] = useState(-1);
+  const [hover] = useState(-1);
   const [text, setText] = useState('');
 
-  const handleTextChange = (event: any) => {
+  const handleTextChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+  main
     setText(event.target.value);
   };
 
@@ -174,7 +175,7 @@ export const AddReviewPopUp: FC<IReviewPopUpProps> = ({ url, name }) => {
                 >
                   Cancel
                 </Button>
-                {isTextEntered && value > 0 ? (
+                {isTextEntered && value !== null && value > 0  ? (
                   <Button variant="contained" autoFocus onClick={handleClose}>
                     Send
                   </Button>

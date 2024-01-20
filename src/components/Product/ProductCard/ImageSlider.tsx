@@ -47,12 +47,12 @@ const settings = {
   //   ],
 };
 
-export const ImageSlider: FC<ISliderImagesProps> = ({ images }) => {
+export const ImageSlider: FC<ISliderImagesProps> = ({images}) => {
   return (
     <StyledContainerImagesSlider>
       <StyledImagesSlider {...settings}>
-        {images?.map((image, index) => (
-          <StyledCardImg key={index}>
+        {images?.map((image) => (
+          <StyledCardImg key={image.name}>
             <Image src={image.url} webp={image.url} alt={image.name} />
           </StyledCardImg>
         ))}

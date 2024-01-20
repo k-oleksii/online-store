@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { FC, useRef, useState } from 'react';
+import {FC, RefObject, SyntheticEvent, useRef, useState} from 'react';
 import {
   Box,
   Breadcrumbs,
@@ -55,13 +55,14 @@ export const ProductCardContent: FC<ICardProps> = props => {
     characteristic,
     count,
   } = props;
+
   const [value, setValue] = useState('1');
-  // const dispatch = useDispatch();
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+
+  const handleChange = (_event: SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
   const reviewSection = useRef(null);
-  const scrollToSection = (elementRef: any) => {
+  const scrollToSection = (elementRef: RefObject<any>) => {
     window.scrollTo({
       top: elementRef.current.offsetTop,
       behavior: 'smooth',

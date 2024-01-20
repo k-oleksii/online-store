@@ -11,7 +11,7 @@ interface ICategoryType {
   category: string;
 }
 
-export const Category: FC<ICategoryType> = ({ cardPic, cardPicWebp, path, category,  }) => {
+export const Category: FC<ICategoryType> = ({ cardPic, cardPicWebp, path, category, }) => {
   return (
     <StyledCategory>
       <Link to={path}>

@@ -4,9 +4,9 @@ import { FC } from 'react';
 import { getIcon } from '@/helpers/getIcon';
 import { StyledReviewCardWrapper } from '@/theme/styles/components/StyledReviewSection';
 import { StyledRating } from '@/theme/styles/ui/StyledRating';
-import { EnumIcons, IReviewProps } from '@/types';
+import {EnumIcons, IReviewItem} from '@/types';
 
-export const ReviewCard: FC<IReviewProps> = props => {
+export const ReviewCard: FC<IReviewItem> = props => {
   const { author, text, stars, updatedAt } = props;
   const { name } = author;
 
