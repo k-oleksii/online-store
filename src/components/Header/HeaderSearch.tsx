@@ -1,5 +1,6 @@
 import { getIcon } from '@/helpers/getIcon';
-import { headerActions } from '@/lib/redux/actions';
+import { setSearch } from '@/lib/otherRedux/slice/header';
+// import { headerActions } from '@/lib/redux/actions';
 import { StyledHeaderSearch } from '@/theme/styles/layout/StyledHeader';
 import { StyledContainer } from '@/theme/styles/layout/StyledWrappers';
 import { EnumBreakpoints, EnumIcons } from '@/types';
@@ -34,7 +35,7 @@ export const HeaderSearch = () => {
           />
           {isMobileScreen && (
             <IconButton
-              onClick={() => dispatch(headerActions.setIsSearchOpen(false))}
+              onClick={() => dispatch(setSearch(false))}
             >
               {getIcon(EnumIcons.close)}
             </IconButton>

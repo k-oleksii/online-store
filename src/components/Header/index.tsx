@@ -10,13 +10,13 @@ import { StyledContainer } from '@/theme/styles/layout/StyledWrappers';
 import { EnumBreakpoints, EnumIcons } from '@/types';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-
-import { headerActions, uiActions } from '@/lib/redux/actions';
 import { IconButton, useMediaQuery } from '@mui/material';
 import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { HeaderSearch } from './HeaderSearch';
 import { HeaderSearchModal } from './HeaderSearchModal';
+import { setSearch } from '@/lib/otherRedux/slice/header';
+import { setAuth } from '@/lib/otherRedux/slice/ui';
 
 export const Header: FC = () => {
   const [open, setOpen] = useState(false);
@@ -31,7 +31,7 @@ export const Header: FC = () => {
   );
 
   const handleSearchBtnClick = () => {
-    dispatch(headerActions.setIsSearchOpen(true));
+    dispatch(setSearch(true));
   };
 
   return (
@@ -55,9 +55,8 @@ export const Header: FC = () => {
             )}
 
             <IconButton>{getIcon(EnumIcons.heart)}</IconButton>
-            <IconButton>{getIcon(EnumIcons.cart)}</IconButton>
             <IconButton
-              onClick={() => dispatch(uiActions.setIsSearchOpen(true))}
+              onClick={() => dispatch(setAuth(true))}
             >
               {getIcon(EnumIcons.user)}
             </IconButton>
