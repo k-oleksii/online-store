@@ -37,7 +37,7 @@ imageFiles.forEach((file) => {
 
   sharp(inputPath)
     .webp({ quality: 80 })
-    .toFile(outputPath, (err, info) => {
+    .toFile(outputPath, (err) => {
       if (err) {
         console.error(`Error while converting ${inputPath}: ${err}`);
       } else {

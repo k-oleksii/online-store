@@ -1,7 +1,7 @@
 import useAxios from 'axios-hooks';
 
 export const useLoadProduct = (
-  id: number
+  id?: number
 ) => {
   const url = `https://www.citywheels.website/api/articles/${id}`;
 

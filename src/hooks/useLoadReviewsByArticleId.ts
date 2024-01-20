@@ -1,7 +1,7 @@
 import useAxios from 'axios-hooks';
 
 export const useLoadReviewsByArticleId = (
-  id: number
+  id?: number
 ) => {
   const url = `https://www.citywheels.website/api/reviews/article/${id}`;
 
