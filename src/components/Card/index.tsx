@@ -10,13 +10,11 @@ import { StyledSale } from '@/theme/styles/components/StyledSale';
 import { StyledRating } from '@/theme/styles/ui/StyledRating';
 import { EnumIcons, ICardProps } from '@/types';
 import { Button, Checkbox, Typography } from '@mui/material';
-import { FC, memo } from 'react';
+import { memo } from 'react';
 import Image from 'react-image-webp';
 import { Link } from 'react-router-dom';
 
-export const Card: FC<ICardProps> = memo(props => {
-  const { name, price, sale, id, images, rating } = props;
-
+export const Card = memo(({ name, price, sale, id, images, rating }: ICardProps) => {
   return (
     <StyledCard>
       <StyledCardTop>
@@ -74,3 +72,5 @@ export const Card: FC<ICardProps> = memo(props => {
     </StyledCard>
   );
 });
+
+Card.displayName = 'Card';

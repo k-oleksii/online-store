@@ -7,7 +7,7 @@ import { EnumIcons } from '@/types';
 import { StyledCardImg, StyledContainerImagesSlider, StyledImagesSlider } from '@/theme/styles/components/StyledProductCard';
 
 interface ISliderImagesProps {
-  images: [{ url: 'string'; name: 'string' }];
+  images: { url: string; name: string }[];
 }
 
 interface IArrowProps {
@@ -43,12 +43,12 @@ const settings = {
   //   ],
 };
 
-export const ImageSlider: FC<ISliderImagesProps> = ({ images }) => {
+export const ImageSlider: FC<ISliderImagesProps> = ({images}) => {
   return (
     <StyledContainerImagesSlider>
       <StyledImagesSlider {...settings}>
-        {images?.map((image, index) => (
-          <StyledCardImg key={index}>
+        {images?.map((image) => (
+          <StyledCardImg key={image.name}>
             <Image src={image.url} webp={image.url} alt={image.name} />
           </StyledCardImg>
         ))}

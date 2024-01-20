@@ -64,7 +64,7 @@ export interface ICardProps {
 }
 
 export interface IProductProps {
-  id: number;
+  id?: number;
 }
 
 export interface IReviewProps {
@@ -72,10 +72,20 @@ export interface IReviewProps {
   text: string;
   stars: number;
   updatedAt: Date;
+  items?: IReviewItem[];
+}
+
+export interface IReviewItem {
+  stars: number;
+  author: {
+    name: string;
+  };
+  text: string;
+  updatedAt: Date;
 }
 
 export interface IReviewPopUpProps {
   name: string;
   url: string;
-  
+  id?: number;
 }
