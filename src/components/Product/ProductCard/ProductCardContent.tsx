@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { FC, memo, useRef, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import {
   Box,
   Breadcrumbs,
@@ -38,7 +38,7 @@ import { StyledAllLink } from '@/theme/styles/ui/StyledAllLink';
 import { ReviewsSection } from '../ReviewsSection';
 import { ProductSectionByCategory } from '../ProductSectionWithCategory';
 import { ImageSlider } from './ImageSlider';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Cart } from '@/components/Cart';
 import { addToFavoritesThunk } from '@/lib/otherRedux/thunks/user';
 
@@ -61,20 +61,19 @@ export const ProductCardContent: FC<ICardProps> = props => {
     setValue(newValue);
   };
   const reviewSection = useRef(null);
-  const scrollToSection = elementRef => {
+  const scrollToSection = (elementRef: any) => {
     window.scrollTo({
       top: elementRef.current.offsetTop,
       behavior: 'smooth',
     });
   };
-  const inFavorites = 'true';
-  const handleFavoritesSubmit = async id => {
-    try {
-      await dispatch(addToFavoritesThunk(id));
-    } catch (e) {
-      return e.message;
-    }
-  };
+  // const handleFavoritesSubmit = async id => {
+  //   try {
+  //     await dispatch(addToFavoritesThunk(id));
+  //   } catch (e) {
+  //     return e.message;
+  //   }
+  // };
   return (
     <StyledProductCardSection>
       <StyledContainer>
@@ -198,7 +197,7 @@ export const ProductCardContent: FC<ICardProps> = props => {
                 aria-label="Like"
                 icon={getIcon(EnumIcons.heart)}
                 checkedIcon={getIcon(EnumIcons.heart)}
-                onChange={handleFavoritesSubmit}
+                // onChange={handleFavoritesSubmit}
               />
             </StyledButtonHeartGroup>
             <Box>
